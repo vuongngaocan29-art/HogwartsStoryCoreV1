@@ -1,0 +1,115 @@
+# ============================================================
+#  HỘI THOẠI — CHƯƠNG 1: HẺM XÉO
+# ============================================================
+
+conversations:
+
+  # ------------------------------------------------------------
+  #  RUBEUS HAGRID
+  # ------------------------------------------------------------
+  hagrid:
+    quester: "&6Rubeus Hagrid"
+    first: chao_lan_dau,chao_lai,chao_da_co_dua
+    stop: "true"
+
+    NPC_options:
+
+      chao_lan_dau:
+        text: "Chà, cuối cùng cũng gặp được con! Ta là Hagrid, người giữ khoá và giữ khu đất ở Hogwarts. Con nhận được thư rồi chứ?"
+        conditions: "!da_gap_hagrid"
+        pointers: hoi_thu,hoi_hogwarts
+
+      chao_lai:
+        text: "Vẫn chưa mua đũa phép à? Tiệm Ollivander ở cuối phố đấy, cái tiệm cũ kỹ có mỗi một cây đũa bày trong tủ kính."
+        conditions: "da_gap_hagrid,!co_dua_phep"
+        pointers: cam_on,hoi_dua
+
+      chao_da_co_dua:
+        text: "Đũa phép chọn con rồi hả? Tốt lắm. Giờ thì lên đường thôi — chuyến tàu không chờ ai đâu."
+        conditions: "co_dua_phep"
+        pointers: cam_on
+
+      giai_thich_thu:
+        text: "Con là một phù thuỷ. Ta biết là nghe hơi sốc. Nhưng mà thư đã tới tay con rồi, nghĩa là Hogwarts đã ghi tên con từ lâu lắm rồi."
+        pointers: hoi_can_mua_gi
+
+      giai_thich_hogwarts:
+        text: "Trường Pháp thuật Hogwarts. Ngôi trường tốt nhất thế giới, ta nói thật đấy. Bảy năm học, bốn Nhà, và một cái Nón biết hát."
+        pointers: hoi_can_mua_gi
+
+      danh_sach_do:
+        text: "Danh mục đồ dùng nằm ngay trong thư. Nhưng thứ quan trọng nhất chỉ có một: một cây đũa phép. Đi tới tiệm Ollivander đi, ta đợi ở đây."
+        events: gap_hagrid,obj_tim_ollivander
+        pointers: cam_on
+
+      tam_biet:
+        text: "Đi đi. Và nhớ này — đừng có nói với ai là ta kể mấy chuyện đó cho con nghe."
+
+    player_options:
+
+      hoi_thu:
+        text: "&aTôi nhận được rồi. Nhưng tôi không hiểu gì cả."
+        pointer: giai_thich_thu
+
+      hoi_hogwarts:
+        text: "&aHogwarts là nơi nào vậy?"
+        pointer: giai_thich_hogwarts
+
+      hoi_can_mua_gi:
+        text: "&aTôi cần mua những gì?"
+        pointer: danh_sach_do
+
+      hoi_dua:
+        text: "&aTiệm Ollivander ở đâu?"
+        pointer: danh_sach_do
+
+      cam_on:
+        text: "&aCảm ơn bác Hagrid."
+        pointer: tam_biet
+
+  # ------------------------------------------------------------
+  #  GARRICK OLLIVANDER
+  # ------------------------------------------------------------
+  ollivander:
+    quester: "&fGarrick Ollivander"
+    first: chao_khach,chao_da_ban,ban_dua
+    stop: "true"
+
+    NPC_options:
+
+      chao_khach:
+        text: "Ta tự hỏi khi nào thì con sẽ tới. Ta nhớ từng cây đũa phép ta từng bán ra, con biết không. Từng cây một."
+        conditions: "!co_dua_phep"
+        pointers: san_sang,hoi_dua_lam_tu_gi
+
+      giai_thich_loi:
+        text: "Mỗi cây đũa của Ollivander đều có lõi từ một chất phép mạnh: lông đuôi phượng hoàng, sợi tim rồng, hoặc lông kỳ lân. Không có hai cây nào giống hệt nhau."
+        pointers: san_sang
+
+      ban_dua:
+        text: "Nào... đưa tay phải ra. Để ta xem thử vài cây."
+        conditions: "!co_dua_phep"
+        events: trao_dua_phep,hoan_thanh_dua
+        pointers: cam_on_ollivander
+
+      chao_da_ban:
+        text: "Cây đũa đó hợp với con. Hãy giữ nó cẩn thận — ta trông đợi những điều lớn lao từ con."
+        conditions: "co_dua_phep"
+        pointers: cam_on_ollivander
+
+      tam_biet_ollivander:
+        text: "Đi đi, đừng để trễ tàu. Và nhớ: đũa phép chọn phù thuỷ, chứ không phải ngược lại."
+
+    player_options:
+
+      san_sang:
+        text: "&aTôi sẵn sàng rồi."
+        pointer: ban_dua
+
+      hoi_dua_lam_tu_gi:
+        text: "&aĐũa phép được làm từ gì vậy ạ?"
+        pointer: giai_thich_loi
+
+      cam_on_ollivander:
+        text: "&aCảm ơn ông."
+        pointer: tam_biet_ollivander

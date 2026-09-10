@@ -1,0 +1,51 @@
+# ============================================================
+#  NĂM I — MỤC TIÊU
+#  Toạ độ lấy từ variables trong package.yml — sửa cho khớp bản đồ.
+# ============================================================
+
+objectives:
+
+  # ---------------- CHƯƠNG 1: HẺM XÉO ----------------
+  di_toi_ollivander: "location %loc_ollivander% 3 events:hoan_thanh_dua conditions:chua_co_dua"
+  di_toi_dai_sanh: "location %loc_great_hall% 4 events:bat_dau_phan_loai conditions:chua_phan_loai"
+
+  # ---------------- LỚP HỌC ----------------
+  di_toi_lop_bua_chu: "location %loc_charms% 4 events:vao_lop_bua_chu conditions:chua_xong_bua_chu"
+  di_toi_lop_bien_hinh: "location %loc_transfig% 4 events:vao_lop_bien_hinh conditions:chua_xong_bien_hinh"
+  di_toi_lop_doc_duoc: "location %loc_potions% 4 events:vao_lop_doc_duoc conditions:chua_xong_doc_duoc"
+  di_toi_san_bay: "location %loc_flying% 5 events:vao_lop_bay conditions:chua_xong_lop_bay"
+  di_toi_lop_dada: "location %loc_dada% 4 events:vao_lop_dada conditions:chua_xong_dada"
+  di_toi_rung_cam: "location %loc_forest% 6 events:bat_dau_cam_tuc conditions:chua_xong_cam_tuc"
+  di_toi_cua_sap: "location %loc_trapdoor% 3 events:bat_dau_thu_thach conditions:du_dieu_kien_thu_thach"
+
+  # ---------------- BÙA CHÚ ----------------
+  # Đếm số lần niệm Wingardium Leviosa. Điểm được cộng qua cast-hooks.
+  luyen_wingardium: "variable charms_practice 5 events:xong_bua_chu"
+
+  # ---------------- BIẾN HÌNH ----------------
+  # Đặt que diêm lên bàn học rồi niệm chú
+  dat_que_diem: "action right ANVIL %loc_transfig% 3 events:bien_thanh_kim conditions:co_que_diem"
+  nop_cay_kim: "variable transfig_done 1 events:xong_bien_hinh"
+
+  # ---------------- ĐỘC DƯỢC ----------------
+  hai_gai_nhim: "block SEA_PICKLE -3 events:kiem_tra_nguyen_lieu notify"
+  hai_tam_ma: "block FERN -2 events:kiem_tra_nguyen_lieu notify"
+  nau_thuoc: "craft thuoc_tri_nhot 1 events:nau_thanh_cong"
+
+  # ---------------- LỚP BAY ----------------
+  bay_len_cao: "location %loc_flying% 30 events:xong_lop_bay"
+
+  # ---------------- DADA ----------------
+  luyen_petrificus: "variable dada_practice 3 events:xong_dada"
+
+  # ---------------- RỪNG CẤM ----------------
+  theo_vet_mau: "location %loc_forest% 25 events:spawn_bong_den"
+  danh_bong_den: "mobkill ZOMBIE 1 name:Bóng_Đen events:xong_cam_tuc"
+
+  # ---------------- THỬ THÁCH CUỐI NĂM ----------------
+  phong_1_fluffy: "action right NOTE_BLOCK any events:qua_phong_1"
+  phong_2_dayto: "mobkill CAVE_SPIDER 3 name:Dây_Tơ_Hồng events:qua_phong_2"
+  phong_3_chiakhoa: "pickup TRIPWIRE_HOOK amount:1 events:qua_phong_3"
+  phong_4_covua: "mobkill IRON_GOLEM 1 name:Quân_Vua_Trắng events:qua_phong_4"
+  phong_5_cauo: "action right POTION any events:qua_phong_5"
+  danh_boss: "mobkill ZOMBIE_VILLAGER 1 name:Quirrell events:thang_boss"

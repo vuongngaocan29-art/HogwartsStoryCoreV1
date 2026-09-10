@@ -1,0 +1,86 @@
+# ============================================================
+#  CỐT TRUYỆN PHỤ — NHẬT KÝ
+# ============================================================
+
+journal:
+
+  side_trevor: |-
+    &6&lCon cóc Trevor
+    &0Neville lại làm mất con cóc. Lần thứ ba trong tuần này.
+    &0Lần trước người ta tìm thấy nó dưới bờ hồ.
+
+  side_trevor_done: |-
+    &6&lCon cóc Trevor — xong
+    &0Neville mừng đến mức suýt đánh rơi nó lần nữa ngay tại chỗ.
+
+  side_peeves: |-
+    &6&lPeeves
+    &0Con yêu tinh phá phách chặn mình giữa hành lang tầng bốn. Nó đang định thả bom thối xuống thư viện.
+    &0Nó muốn mình canh chừng giúp. Hoặc mình có thể đi mách Bà Béo.
+
+  side_peeves_help: |-
+    &6&lPeeves — hùa theo
+    &0Mình đồng ý canh chừng. Nếu bị bắt thì đây sẽ là quyết định ngu ngốc nhất năm nay.
+
+  side_peeves_help_done: |-
+    &6&lPeeves — hùa theo (xong)
+    &0Cả thư viện bốc mùi suốt hai ngày. Bà Bình Bích trừ điểm Nhà mình, nhưng Peeves thì nợ mình một lần.
+    &0Nó bảo từ giờ sẽ không nhắm vào mình nữa. Với Peeves thì đó là cả một lời hứa.
+
+  side_peeves_report: |-
+    &6&lPeeves — đi mách
+    &0Mình đi báo Bà Béo. Peeves sẽ ghét mình vì chuyện này.
+
+  side_peeves_report_done: |-
+    &6&lPeeves — đi mách (xong)
+    &0Bà Béo cảm ơn mình và ghi cho mật khẩu tuần này. Peeves thì thả bột phấn lên đầu mình ba lần liên tiếp hôm sau.
+    &0Đáng.
+
+  side_restricted: |-
+    &6&lKhu Cấm
+    &0Có một cuốn sách trong Khu Cấm của thư viện trả lời được câu hỏi mình đang thắc mắc.
+    &0Vào đó phải có giấy phép giáo sư. Hoặc phải vào lúc không ai nhìn thấy.
+
+  side_restricted_done: |-
+    &6&lKhu Cấm — xong
+    &0Mấy cuốn sách trong đó biết hét. Mình vẫn chưa hiểu tại sao trường lại để chúng ở nơi học sinh với tay tới được.
+
+  side_mirror: |-
+    &6&lTấm gương trong phòng trống
+    &0Một căn phòng bỏ hoang ở tầng ba. Bên trong chỉ có một tấm gương cao, khung vàng, chân là hai cái vuốt.
+    &0Trên khung khắc một dòng chữ đọc ngược.
+
+  side_mirror_done: |-
+    &6&lTấm gương — xong
+    &0Cụ Dumbledore tìm thấy mình ngồi trước gương lúc gần sáng.
+    &0Cụ nói tấm gương này không cho ta biết sự thật, cũng chẳng cho ta tri thức. Nó chỉ cho ta thấy điều ta khao khát nhất.
+    &0Và người ta có thể héo mòn cả đời trước nó.
+
+  side_kitchen: |-
+    &6&lNhà bếp
+    &0Có một bức tranh tĩnh vật ở hành lang dưới tầng hầm. Nghe nói nếu cù lét quả lê trong tranh thì nó sẽ cười và biến thành tay nắm cửa.
+    &0Nghe thì vô lý. Nhưng ở đây thì mọi thứ đều vô lý cả.
+
+  side_kitchen_done: |-
+    &6&lNhà bếp — xong
+    &0Gia tinh Bấc nói từ giờ mình muốn xuống bếp lúc nào cũng được.
+    &0Mình sẽ không kể chuyện này cho ai. Chắc chắn là không.
+
+  side_nick: |-
+    &6&lNick Suýt Mất Đầu
+    &0Con ma của Nhà Gryffindor bị Hội Săn Không Đầu từ chối vì đầu ông ấy vẫn còn dính lại bốn phân da.
+    &0Chuyện đó xảy ra năm 1492 và ông ấy vẫn còn cay.
+
+  side_nick_done: |-
+    &6&lNick Suýt Mất Đầu — xong
+    &0Mình tìm được lá thư từ chối. Nick đọc lại rồi lặng đi rất lâu.
+    &0Ông ấy nói cảm ơn, rồi trôi xuyên qua tường mà không nói thêm gì.
+
+  side_cards: |-
+    &6&lThẻ Sô cô la Ếch nhái
+    &0Mỗi thanh sô cô la có một tấm thẻ phù thuỷ nổi tiếng. Có mười hai tấm trong bộ.
+    &0Người trong ảnh thỉnh thoảng bỏ đi mất, nên đừng trông đợi họ luôn ở đó.
+
+  side_cards_done: |-
+    &6&lThẻ Sô cô la — đủ bộ
+    &0Đủ cả mười hai tấm. Dumbledore trong thẻ của mình đã bỏ đi ba lần rồi lại quay về.

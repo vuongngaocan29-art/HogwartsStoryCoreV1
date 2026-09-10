@@ -1,0 +1,53 @@
+# ============================================================
+#  CỐT TRUYỆN PHỤ — MỤC TIÊU
+# ============================================================
+
+objectives:
+
+  # ---------------- TREVOR ----------------
+  # Con cóc trốn ở bờ hồ. Bắt bằng cách nhấp chuột phải vào nó.
+  tim_trevor: "interact right FROG 1 events:bat_duoc_coc notify"
+
+  # ---------------- PEEVES ----------------
+  tha_bom_thoi: "location %loc_khu_cam% 6 events:ket_nhanh_a conditions:co_bom_thoi"
+  di_bao_ba_beo: "npcinteract 22 events:ket_nhanh_b"
+
+  # ---------------- KHU CẤM ----------------
+  # Ban ngày: Bà Bình Bích chặn. Ban đêm: 35% bị Filch tóm.
+  lay_sach_cam: "action right BOOKSHELF %loc_khu_cam% 4 events:lay_duoc_sach conditions:gio_gioi_nghiem,!filch_tuan_tra"
+  bi_filch_tom: "action right BOOKSHELF %loc_khu_cam% 4 events:bi_bat_gap conditions:gio_gioi_nghiem,filch_tuan_tra"
+
+  # ---------------- GƯƠNG ẢO ẢNH ----------------
+  tim_phong_guong: "location %loc_guong% 4 events:tim_thay_guong conditions:gio_gioi_nghiem,chua_soi_guong"
+
+  # ---------------- BẾP ----------------
+  # Cù lét quả lê trong bức tranh tĩnh vật để mở cửa bếp
+  cu_qua_le: "action right PAINTING %loc_bep% 3 events:vao_bep"
+  hai_dau_tay: "block SWEET_BERRY_BUSH -10 events:thong_bao_du_dau notify"
+
+  # ---------------- NICK ----------------
+  tim_thu_tu_choi: "action right CHEST %loc_thap_cu% 4 events:tim_duoc_thu"
+
+  # ---------------- THẺ ----------------
+  # Không cần objective — mua qua hội thoại với bà bán hàng.
+
+
+# ============================================================
+#  CỐT TRUYỆN PHỤ — VẬT PHẨM
+# ============================================================
+
+items:
+
+  con_coc: "frog_spawn_egg name:&aTrevor lore:&7Con_cóc_của_Neville.;&8Nó_không_thích_bị_bắt."
+  keo_bertie: "cookie name:&dKẹo_Bertie_Bott lore:&7Đủ_mọi_vị.;&8Kể_cả_những_vị_không_ai_muốn."
+
+  bom_thoi: "fire_charge name:&2Bom_thối lore:&7Peeves_tự_tay_làm.;&8Dùng_có_trách_nhiệm._Hoặc_không."
+  giay_mat_khau: "paper name:&6Mật_khẩu_tuần_này lore:&7Bà_Béo_ghi_cho_bạn.;&8Đừng_để_ai_thấy."
+
+  sach_khu_cam: "written_book title:&4Bí_thuật_Hắc_ám_Tối_thượng author:Không_rõ"
+
+  banh_gia_tinh: "pumpkin_pie name:&6Bánh_bí_ngô_nóng lore:&7Gia_tinh_Bấc_nướng_riêng_cho_bạn."
+
+  thu_tu_choi: "paper name:&fThư_từ_chối lore:&7Hội_Săn_Không_Đầu_gửi_năm_1492.;&8Nick_vẫn_chưa_quên_được."
+
+  hop_the_day_du: "chest name:&6Bộ_sưu_tập_hoàn_chỉnh lore:&7Đủ_cả_mười_hai_tấm_thẻ.;&8Rất_ít_học_sinh_làm_được_điều_này."

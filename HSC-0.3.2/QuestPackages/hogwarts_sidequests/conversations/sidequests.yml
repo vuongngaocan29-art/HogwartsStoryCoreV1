@@ -1,0 +1,446 @@
+# ============================================================
+#  CỐT TRUYỆN PHỤ — HỘI THOẠI
+# ============================================================
+
+conversations:
+
+  # ------------------------------------------------------------
+  #  NEVILLE — CON CÓC TREVOR
+  # ------------------------------------------------------------
+  neville:
+    quester: "&aNeville Longbottom"
+    first: nho_giup, dang_tim, mang_ve, da_xong_roi
+    stop: "true"
+
+    NPC_options:
+      nho_giup:
+        text: "Ơ... xin lỗi, cậu có thấy con cóc nào không? Nó tên Trevor. Mình lại làm mất nó rồi."
+        conditions: "!dang_tim_coc,!xong_coc"
+        pointers: dong_y_giup, tu_choi
+
+      chi_duong:
+        text: "Cảm ơn cậu nhiều lắm! Lần trước người ta tìm thấy nó dưới bờ hồ. Nó thích chỗ ẩm."
+        events: nhan_tim_coc
+        pointers: di_tim
+
+      dang_tim:
+        text: "Cậu tìm thấy nó chưa? Bà mình sẽ giết mình mất."
+        conditions: "dang_tim_coc,!co_coc,!xong_coc"
+        pointers: chua_thay
+
+      mang_ve:
+        text: "TREVOR! Ôi trời ơi, cảm ơn cậu! Đây, cầm lấy gói kẹo này — mình không dám ăn, toàn ra vị kỳ quặc."
+        conditions: "co_coc,!xong_coc"
+        events: tra_coc
+        pointers: khong_co_gi
+
+      da_xong_roi:
+        text: "Trevor vẫn ổn. Ừm... tạm thời thì ổn."
+        conditions: "xong_coc"
+        pointers: hoi_lai_mat
+
+      lai_mat_roi:
+        text: "Thật ra thì... nó lại biến mất từ sáng nay rồi."
+        events: reset_trevor
+        pointers: thoi_duoc
+
+      tam_biet_neville:
+        text: "Cảm ơn cậu. Thật đấy."
+
+    player_options:
+      dong_y_giup:
+        text: "&aĐể mình giúp cậu tìm."
+        pointer: chi_duong
+      tu_choi:
+        text: "&aXin lỗi, mình đang bận."
+        pointer: tam_biet_neville
+      di_tim:
+        text: "&aMình sẽ ra hồ xem thử."
+        pointer: tam_biet_neville
+      chua_thay:
+        text: "&aChưa, mình vẫn đang tìm."
+        pointer: tam_biet_neville
+      khong_co_gi:
+        text: "&aKhông có gì đâu."
+        pointer: tam_biet_neville
+      hoi_lai_mat:
+        text: "&aNó lại mất nữa à?"
+        pointer: lai_mat_roi
+      thoi_duoc:
+        text: "&aThôi được rồi, mình đi tìm tiếp."
+        pointer: tam_biet_neville
+
+  # ------------------------------------------------------------
+  #  PEEVES — NHÁNH ĐÔI
+  # ------------------------------------------------------------
+  peeves:
+    quester: "&5Peeves"
+    first: chan_duong, cho_quyet_dinh, da_xong_giup, da_xong_mach
+    stop: "true"
+
+    NPC_options:
+      chan_duong:
+        text: "Ối chà chà! Học sinh năm nhất đi lạc! Peeves có việc hay lắm đây. Rất hay. Rất là thối."
+        conditions: "!gap_peeves_roi"
+        pointers: hoi_viec_gi
+
+      giai_thich_tro_nghich:
+        text: "Bom thối! Cả một thùng! Thả xuống Khu Cấm của thư viện! Bà Bình Bích già nua sẽ nhảy dựng lên như con cóc bị dẫm!"
+        events: gap_peeves
+        pointers: nhanh_a, nhanh_b, tu_choi_peeves
+
+      dua_bom:
+        text: "Hê hê hê! Người tốt! Đây, cầm lấy một quả. Ném vào Khu Cấm rồi chạy thật nhanh — Peeves không đợi ai đâu!"
+        events: nhanh_giup_peeves, cho_bom
+        pointers: di_thoi
+
+      doa_nat:
+        text: "Đi mách hả? ĐI MÁCH HẢ? Peeves nhớ mặt rồi đấy! Peeves nhớ dai lắm!"
+        events: nhanh_mach
+        pointers: di_thoi
+
+      cho_quyet_dinh:
+        text: "Sao? Nghĩ xong chưa? Peeves không rảnh cả đêm đâu!"
+        conditions: "gap_peeves_roi,chua_chon_nhanh"
+        pointers: nhanh_a, nhanh_b
+
+      da_xong_giup:
+        text: "Cả thư viện thối um suốt hai ngày! Peeves nợ ngươi một lần. Từ giờ Peeves không nhắm vào ngươi nữa — trừ khi Peeves buồn chán."
+        conditions: "chon_nhanh_giup,xong_peeves"
+        pointers: chao_peeves
+
+      da_xong_mach:
+        text: "Kẻ mách lẻo! Kẻ mách lẻo! Peeves sẽ đổ mực lên đầu ngươi vào một ngày ngươi không ngờ tới nhất!"
+        conditions: "chon_nhanh_mach,xong_peeves"
+        pointers: chao_peeves
+
+      bay_di:
+        text: "Hê hê hê hê hê!"
+
+    player_options:
+      hoi_viec_gi:
+        text: "&aViệc gì vậy?"
+        pointer: giai_thich_tro_nghich
+      nhanh_a:
+        text: "&e[Hùa theo] &aĐược, mình canh chừng cho."
+        pointer: dua_bom
+      nhanh_b:
+        text: "&e[Mách] &aMình sẽ đi báo Bà Béo."
+        pointer: doa_nat
+      tu_choi_peeves:
+        text: "&aMình không tham gia đâu."
+        pointer: bay_di
+      di_thoi:
+        text: "&aĐược rồi."
+        pointer: bay_di
+      chao_peeves:
+        text: "&a..."
+        pointer: bay_di
+
+  # ------------------------------------------------------------
+  #  BÀ BÉO — nhận lời mách
+  # ------------------------------------------------------------
+  ba_binh_bich:
+    quester: "&dBà Béo"
+    first: nhan_bao_cao, chan_khu_cam, chao_binh_thuong
+    stop: "true"
+
+    NPC_options:
+      nhan_bao_cao:
+        text: "Con yêu tinh đó lại nữa à? Ta sẽ báo cho Cụ Huynh trưởng Máu ngay. Cảm ơn con, con ngoan lắm."
+        conditions: "chon_nhanh_mach,!xong_peeves"
+        events: ket_nhanh_b
+        pointers: khong_co_gi_ba
+
+      chan_khu_cam:
+        text: "Khu Cấm chỉ dành cho học sinh có giấy phép của giáo sư. Con thì rõ ràng là không có."
+        conditions: "dang_lam_khu_cam,ban_ngay"
+        pointers: xin_loi_ba
+
+      chao_binh_thuong:
+        text: "Giữ trật tự trong hành lang, con nhé."
+        pointers: xin_loi_ba
+
+      tam_biet_ba:
+        text: "Đi đi con."
+
+    player_options:
+      khong_co_gi_ba:
+        text: "&aDạ không có gì ạ."
+        pointer: tam_biet_ba
+      xin_loi_ba:
+        text: "&aDạ vâng ạ."
+        pointer: tam_biet_ba
+
+  # ------------------------------------------------------------
+  #  CỤ DUMBLEDORE — GƯƠNG ẢO ẢNH
+  # ------------------------------------------------------------
+  dumbledore_guong:
+    quester: "&fAlbus Dumbledore"
+    first: gap_truoc_guong, da_soi_roi
+    stop: "true"
+
+    NPC_options:
+      gap_truoc_guong:
+        text: "Vậy là con, cũng như bao người khác, đã tìm thấy điều mà tấm Gương Ảo Ảnh cho con thấy."
+        conditions: "thay_guong,chua_soi_guong"
+        pointers: hoi_guong_la_gi
+
+      giai_thich_guong:
+        text: "Nó không cho ta thấy sự thật, cũng chẳng cho ta tri thức. Nó chỉ cho ta thấy điều ta khao khát nhất, không hơn không kém."
+        pointers: hoi_con_thay_gi
+
+      hoi_lai:
+        text: "Nói ta nghe — con nhìn thấy gì trong đó?"
+        pointers: thay_gia_dinh, thay_vinh_quang, thay_tri_thuc, thay_binh_yen
+
+      dap_gia_dinh:
+        text: "Người hạnh phúc nhất sẽ nhìn vào gương và chỉ thấy chính mình, đúng như mình đang là. Con chưa tới đó. Nhưng khao khát đó là một khao khát tử tế."
+        events: chon_gia_dinh
+        pointers: cam_on_cu
+
+      dap_vinh_quang:
+        text: "Tham vọng không phải là tội. Nhưng hãy nhớ rằng có người đã héo mòn cả đời trước tấm gương này, vì mải nhìn thứ mình chưa bao giờ có."
+        events: chon_vinh_quang
+        pointers: cam_on_cu
+
+      dap_tri_thuc:
+        text: "Một câu trả lời rất Ravenclaw, dù con thuộc Nhà nào đi nữa. Nhưng tri thức không phải lúc nào cũng là thứ đáng đánh đổi nhất."
+        events: chon_tri_thuc
+        pointers: cam_on_cu
+
+      dap_binh_yen:
+        text: "Ở tuổi con mà đã mong bình yên thì hoặc con rất khôn ngoan, hoặc con đã trải qua nhiều hơn mức đáng ra phải có. Ta e là cả hai."
+        events: chon_binh_yen
+        pointers: cam_on_cu
+
+      loi_dan:
+        text: "Ngày mai tấm gương sẽ được chuyển đi nơi khác. Ta mong con đừng đi tìm nó nữa. Người ta không thể sống bằng những giấc mơ, con ạ."
+        events: guong_bien_mat
+        pointers: vang_a_cu
+
+      da_soi_roi:
+        text: "Căn phòng đó giờ trống rồi, con ạ. Đó là điều tốt hơn cho tất cả mọi người."
+        conditions: "xong_guong"
+        pointers: vang_a_cu
+
+      tam_biet_cu:
+        text: "Chúc con ngủ ngon. Và nhớ khép cửa lại giúp ta."
+
+    player_options:
+      hoi_guong_la_gi:
+        text: "&aTấm gương này là gì vậy ạ?"
+        pointer: giai_thich_guong
+      hoi_con_thay_gi:
+        text: "&aVậy điều con thấy có thật không ạ?"
+        pointer: hoi_lai
+      thay_gia_dinh:
+        text: "&aCon thấy gia đình con."
+        pointer: dap_gia_dinh
+      thay_vinh_quang:
+        text: "&aCon thấy mình được cả trường tung hô."
+        pointer: dap_vinh_quang
+      thay_tri_thuc:
+        text: "&aCon thấy mình hiểu được mọi thứ."
+        pointer: dap_tri_thuc
+      thay_binh_yen:
+        text: "&aCon thấy một nơi không ai làm con sợ nữa."
+        pointer: dap_binh_yen
+      cam_on_cu:
+        text: "&aCon cảm ơn cụ ạ."
+        pointer: loi_dan
+      vang_a_cu:
+        text: "&aVâng ạ."
+        pointer: tam_biet_cu
+
+  # ------------------------------------------------------------
+  #  GIA TINH BẤC — NHÀ BẾP
+  # ------------------------------------------------------------
+  gia_tinh_bac:
+    quester: "&eGia tinh Bấc"
+    first: chao_lan_dau_bep, dang_hai_dau, du_dau_roi, cho_do_an
+    stop: "true"
+
+    NPC_options:
+      chao_lan_dau_bep:
+        text: "Ôi! Học sinh! Học sinh xuống bếp! Bấc chưa từng thấy học sinh nào tìm ra quả lê cả, thưa cậu chủ!"
+        conditions: "biet_duong_vao_bep,!dang_giup_bep,!xong_bep"
+        pointers: hoi_giup_gi
+
+      nho_hai_dau:
+        text: "Bữa tiệc tối nay thiếu dâu, thưa cậu chủ! Bấc bận quá, bận quá! Cậu chủ hái giúp Bấc mười quả trong nhà kính được không ạ?"
+        events: nhan_viec_bep
+        pointers: dong_y_bep
+
+      dang_hai_dau:
+        text: "Cậu chủ hái đủ chưa ạ? Bấc vẫn còn hai trăm cái bánh phải nướng!"
+        conditions: "dang_giup_bep,!co_du_dau,!xong_bep"
+        pointers: chua_du_dau
+
+      du_dau_roi:
+        text: "Ôi cảm ơn cậu chủ! Cảm ơn cậu chủ nhiều lắm! Bấc nướng riêng cho cậu chủ một cái bánh bí ngô. Và từ giờ cậu chủ muốn xuống đây lúc nào cũng được ạ!"
+        conditions: "co_du_dau,!xong_bep"
+        events: xong_viec_bep, mo_khoa_bep
+        pointers: cam_on_bac
+
+      cho_do_an:
+        text: "Cậu chủ đói ạ? Bấc lúc nào cũng có sẵn đồ nóng!"
+        conditions: "duoc_vao_bep"
+        pointers: xin_banh, khong_can
+
+      tam_biet_bac:
+        text: "Bấc chào cậu chủ ạ!"
+
+    player_options:
+      hoi_giup_gi:
+        text: "&aMình giúp gì được không?"
+        pointer: nho_hai_dau
+      dong_y_bep:
+        text: "&aĐược, mình đi hái ngay."
+        pointer: tam_biet_bac
+      chua_du_dau:
+        text: "&aChưa, mình hái tiếp đây."
+        pointer: tam_biet_bac
+      cam_on_bac:
+        text: "&aCảm ơn Bấc."
+        pointer: tam_biet_bac
+      xin_banh:
+        text: "&aCho mình xin một cái bánh."
+        pointer: tam_biet_bac
+        events: xin_do_an
+      khong_can:
+        text: "&aThôi, mình no rồi."
+        pointer: tam_biet_bac
+
+  # ------------------------------------------------------------
+  #  NICK SUÝT MẤT ĐẦU
+  # ------------------------------------------------------------
+  nick_suyt_mat_dau:
+    quester: "&7Ngài Nicholas de Mimsy-Porpington"
+    first: gap_nick_lan_dau, dang_tim_thu, mang_thu_ve, da_xong_nick
+    stop: "true"
+
+    NPC_options:
+      gap_nick_lan_dau:
+        text: "Xin chào. Ta là Ngài Nicholas de Mimsy-Porpington. Học sinh ở đây thích gọi ta là... Nick Suýt Mất Đầu."
+        conditions: "!gap_nick_roi"
+        pointers: hoi_tai_sao
+
+      giai_thich_dau:
+        text: "Bốn mươi lăm nhát rìu cùn. Bốn mươi lăm! Và cuối cùng vẫn còn dính lại đúng bốn phân da. Vì thế Hội Săn Không Đầu không nhận ta."
+        events: gap_nick
+        pointers: hoi_hoi_san
+
+      noi_ve_thu:
+        text: "Họ có gửi cho ta một lá thư từ chối. Năm 1492. Ta cất nó ở tháp cũ phía đông, rồi không dám quay lại lấy suốt năm trăm năm."
+        pointers: xung_phong_tim
+
+      nho_lay_thu:
+        text: "Con làm được à? Ta... ta nghĩ đã đến lúc ta nên đọc lại nó."
+        events: nhan_viec_nick
+        pointers: di_ngay
+
+      dang_tim_thu:
+        text: "Tháp cũ phía đông. Trong cái rương dưới cửa sổ vỡ."
+        conditions: "gap_nick_roi,!co_thu_tu_choi,!xong_nick"
+        pointers: di_ngay
+
+      mang_thu_ve:
+        text: "Đưa ta xem nào... 'Kính gửi Ngài Nicholas, chúng tôi rất tiếc phải thông báo...' Ừ. Vẫn đúng những chữ đó."
+        conditions: "co_thu_tu_choi,!xong_nick"
+        pointers: an_ui
+
+      cam_on_nick:
+        text: "Năm trăm năm ta cứ nghĩ nếu đọc lại thì sẽ đau lắm. Hoá ra không. Cảm ơn con. Thật lòng đấy."
+        events: xong_viec_nick
+        pointers: chao_nick
+
+      da_xong_nick:
+        text: "Ta đã thôi nghĩ về Hội Săn Không Đầu rồi. Dạo này ta chuyển sang lo tổ chức tiệc kỷ niệm ngày mất của mình."
+        conditions: "xong_nick"
+        pointers: chao_nick
+
+      troi_di:
+        text: "Chúc con một ngày tốt lành. Và tránh Peeves ra."
+
+    player_options:
+      hoi_tai_sao:
+        text: "&aSao lại là 'suýt' ạ?"
+        pointer: giai_thich_dau
+      hoi_hoi_san:
+        text: "&aHội Săn Không Đầu là gì ạ?"
+        pointer: noi_ve_thu
+      xung_phong_tim:
+        text: "&aĐể con đi lấy lá thư đó cho ngài."
+        pointer: nho_lay_thu
+      di_ngay:
+        text: "&aCon đi ngay đây."
+        pointer: troi_di
+      an_ui:
+        text: "&aNgài không cần họ công nhận đâu ạ."
+        pointer: cam_on_nick
+      chao_nick:
+        text: "&aChào ngài ạ."
+        pointer: troi_di
+
+  # ------------------------------------------------------------
+  #  BÀ BÁN HÀNG — THẺ SÔ CÔ LA
+  # ------------------------------------------------------------
+  ba_ban_hang:
+    quester: "&6Bà bán hàng"
+    first: moi_mua, du_bo_roi
+    stop: "true"
+
+    NPC_options:
+      moi_mua:
+        text: "Có ăn gì không cưng? Sô cô la Ếch nhái năm đồng một thanh — mỗi thanh có một tấm thẻ phù thuỷ nổi tiếng bên trong."
+        conditions: "chua_du_bo"
+        pointers: mua_mot, hoi_bo_the, thoi_khong_mua
+
+      giai_thich_the:
+        text: "Có mười hai tấm cả thảy cưng ạ. Ai gom đủ thì bà tặng một cái hộp gỗ đựng riêng. Mấy chục năm rồi mới có vài đứa làm được."
+        pointers: mua_mot, thoi_khong_mua
+
+      dua_ech:
+        text: "Đây cưng. Cẩn thận, mấy con ếch này nhảy một cái là mất tăm đấy."
+        conditions: "du_tien_mua"
+        events: mua_ech
+        pointers: mua_them, thoi_khong_mua
+
+      khong_du_tien:
+        text: "Cưng thiếu tiền rồi. Bà không cho nợ đâu nhé."
+        conditions: "!du_tien_mua"
+        pointers: thoi_khong_mua
+
+      du_bo_roi:
+        text: "Ôi trời! Cưng gom đủ cả mười hai tấm rồi à? Đây, cái hộp này bà giữ mấy chục năm chờ có người xứng đáng."
+        conditions: "du_bo_suu_tap,!da_nhan_thuong_the"
+        events: du_bo_the
+        pointers: cam_on_ba
+
+      da_nhan_roi:
+        text: "Bộ sưu tập của cưng đẹp đấy. Giữ cho kỹ nhé."
+        conditions: "da_nhan_thuong_the"
+        pointers: cam_on_ba
+
+      tam_biet_ba_hang:
+        text: "Đi mạnh giỏi nhé cưng."
+
+    player_options:
+      mua_mot:
+        text: "&aCho con một thanh ạ."
+        pointer: dua_ech
+        conditions: du_tien_mua
+      mua_them:
+        text: "&aCho con thêm một thanh nữa."
+        pointer: dua_ech
+        conditions: du_tien_mua
+      hoi_bo_the:
+        text: "&aBộ thẻ có bao nhiêu tấm ạ?"
+        pointer: giai_thich_the
+      thoi_khong_mua:
+        text: "&aThôi ạ, cảm ơn bà."
+        pointer: tam_biet_ba_hang
+      cam_on_ba:
+        text: "&aCon cảm ơn bà ạ!"
+        pointer: tam_biet_ba_hang

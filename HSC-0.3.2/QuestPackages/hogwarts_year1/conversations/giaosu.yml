@@ -1,0 +1,334 @@
+# ============================================================
+#  HỘI THOẠI — CÁC GIÁO SƯ NĂM I
+# ============================================================
+
+conversations:
+
+  # ------------------------------------------------------------
+  #  GIÁO SƯ FILIUS FLITWICK — BÙA CHÚ
+  # ------------------------------------------------------------
+  flitwick:
+    quester: "&bGiáo sư Flitwick"
+    first: chao_lop, dang_luyen, da_thuan_thuc, da_xong
+    stop: "true"
+
+    NPC_options:
+
+      chao_lop:
+        text: "Ồ, học sinh mới! Vào chỗ đi, vào chỗ đi. Hôm nay chúng ta học bùa Bay Bổng — Wingardium Leviosa."
+        conditions: "!dang_hoc_bua_chu"
+        pointers: xin_hoc, hoi_cach_niem
+
+      giai_thich_cach_niem:
+        text: "Cổ tay vung nhẹ rồi gạt — nhớ nhé, vung rồi gạt. Và phát âm cho chuẩn: Win-GAR-dium Levi-O-sa. Nhấn sai chữ 'gar' là con sẽ có một con trâu nước trên ngực đấy!"
+        pointers: xin_hoc
+
+      giao_bai:
+        text: "Rất tốt. Ta đã ghi tên con vào sổ. Hãy niệm Wingardium Leviosa năm lần cho thuần thục rồi quay lại gặp ta."
+        events: vao_lop_bua_chu, bat_dau_luyen_bua
+        pointers: vang_a
+
+      dang_luyen:
+        text: "Chưa đủ đâu con. Cứ luyện tiếp đi — phép thuật cần lặp lại thì mới thành phản xạ."
+        conditions: "dang_hoc_bua_chu,!du_5_lan_bua_chu,!xong_bua_chu"
+        pointers: vang_a
+
+      da_thuan_thuc:
+        text: "Tuyệt vời! Thật sự tuyệt vời! Cái lông vũ bay cao hơn cả bục giảng của ta! Ta cho Nhà con hai mươi điểm."
+        conditions: "dang_hoc_bua_chu,du_5_lan_bua_chu,!xong_bua_chu"
+        events: xong_bua_chu
+        pointers: cam_on_thay
+
+      da_xong:
+        text: "Con đã qua bài này rồi. Giáo sư McGonagall đang đợi con ở lớp Biến hình đấy — và bà ấy không thích ai đến muộn đâu."
+        conditions: "xong_bua_chu"
+        pointers: cam_on_thay
+
+      chuc_may_man:
+        text: "Chúc con may mắn! Và nhớ: vung rồi gạt!"
+
+    player_options:
+      xin_hoc:
+        text: "&aEm sẵn sàng học ạ."
+        pointer: giao_bai
+      hoi_cach_niem:
+        text: "&aNiệm chú thế nào cho đúng ạ?"
+        pointer: giai_thich_cach_niem
+      vang_a:
+        text: "&aVâng thưa thầy."
+        pointer: chuc_may_man
+      cam_on_thay:
+        text: "&aEm cảm ơn thầy ạ."
+        pointer: chuc_may_man
+
+  # ------------------------------------------------------------
+  #  GIÁO SƯ MINERVA MCGONAGALL — BIẾN HÌNH
+  # ------------------------------------------------------------
+  mcgonagall:
+    quester: "&6Giáo sư McGonagall"
+    first: chao_lop_bh, dang_lam_bai, da_co_kim, da_xong_bh
+    stop: "true"
+
+    NPC_options:
+
+      chao_lop_bh:
+        text: "Biến hình là môn phức tạp và nguy hiểm bậc nhất các em sẽ học ở ngôi trường này. Ai đùa giỡn trong lớp của tôi sẽ đi ra và không quay lại nữa."
+        conditions: "!dang_hoc_bien_hinh"
+        pointers: nghiem_tuc, hoi_bai_hoc
+
+      giai_thich_bh:
+        text: "Bài đầu tiên đơn giản thôi: biến một que diêm thành một cây kim. Nghe thì dễ. Sẽ có em mất cả tháng mới làm được."
+        pointers: nghiem_tuc
+
+      giao_bai_kim_npc:
+        text: "Đây là que diêm của em. Đặt nó lên bàn học, tập trung vào hình dạng em muốn nó trở thành, rồi thực hiện."
+        events: vao_lop_bien_hinh, giao_bai_kim, obj_dat_que_diem
+        pointers: vang_co
+
+      dang_lam_bai:
+        text: "Chưa xong. Tập trung vào ý định, không phải vào động tác. Que diêm không đọc được cử chỉ của em — nó đọc được điều em muốn."
+        conditions: "dang_hoc_bien_hinh,!co_cay_kim,!xong_bien_hinh"
+        pointers: vang_co
+
+      da_co_kim:
+        text: "Cho tôi xem nào... Bạc, thẳng, đầu nhọn. Đạt. Hai mươi điểm cho Nhà của em."
+        conditions: "dang_hoc_bien_hinh,co_cay_kim,!xong_bien_hinh"
+        events: xong_bien_hinh
+        pointers: cam_on_co
+
+      da_xong_bh:
+        text: "Em đã qua bài của tôi. Xuống hầm ngục đi — Giáo sư Snape không chờ đợi ai bao giờ."
+        conditions: "xong_bien_hinh"
+        pointers: cam_on_co
+
+      ket_thuc_bh:
+        text: "Đi đi. Và đừng chạy trong hành lang."
+
+    player_options:
+      nghiem_tuc:
+        text: "&aEm hiểu ạ."
+        pointer: giao_bai_kim_npc
+      hoi_bai_hoc:
+        text: "&aHôm nay chúng em học gì ạ?"
+        pointer: giai_thich_bh
+      vang_co:
+        text: "&aVâng thưa cô."
+        pointer: ket_thuc_bh
+      cam_on_co:
+        text: "&aEm cảm ơn cô ạ."
+        pointer: ket_thuc_bh
+
+  # ------------------------------------------------------------
+  #  GIÁO SƯ SEVERUS SNAPE — ĐỘC DƯỢC
+  # ------------------------------------------------------------
+  snape:
+    quester: "&2Giáo sư Snape"
+    first: chao_lop_dd, dang_hai, da_du_nguyen_lieu, da_xong_dd
+    stop: "true"
+
+    NPC_options:
+
+      chao_lop_dd:
+        text: "Ở đây không có vung đũa ngớ ngẩn, cũng không có ai lẩm bẩm mấy câu thần chú vô nghĩa. Đây là nghệ thuật tinh tế của việc nấu độc dược."
+        conditions: "!dang_hoc_doc_duoc"
+        pointers: im_lang, tra_loi_cau_hoi
+
+      cau_hoi_kho:
+        text: "Vậy thì trả lời tôi: thêm bột rễ thuỷ tiên vào dịch ngải cứu thì được cái gì?"
+        pointers: dap_dung, dap_sai
+
+      dap_an_dung:
+        text: "...Đúng. Một điểm bất ngờ. Ít nhất thì em có mở sách ra."
+        pointers: nhan_cong_thuc
+
+      dap_an_sai:
+        text: "Sai. Rõ ràng là danh tiếng không đi kèm với việc đọc sách. Trừ năm điểm."
+        events: snape_tru_diem
+        pointers: nhan_cong_thuc
+
+      giao_cong_thuc_npc:
+        text: "Hôm nay: Thuốc Trị Nhọt. Đi hái ba gai nhím biển và hai nắm tầm ma khô. Đừng làm hỏng vạc của tôi."
+        events: vao_lop_doc_duoc, giao_cong_thuc, obj_hai_nguyen_lieu
+        pointers: vang_thay
+
+      dang_hai:
+        text: "Em vẫn đứng đây à? Nguyên liệu không tự bò vào vạc đâu."
+        conditions: "dang_hoc_doc_duoc,!co_du_nguyen_lieu,!xong_doc_duoc"
+        pointers: vang_thay
+
+      da_du_nguyen_lieu:
+        text: "Đưa đây. Đun nhỏ lửa, khuấy ngược chiều kim đồng hồ bốn vòng, rồi nhấc vạc ra khỏi lửa TRƯỚC khi cho gai nhím vào."
+        conditions: "dang_hoc_doc_duoc,co_du_nguyen_lieu,!xong_doc_duoc"
+        events: nau_thanh_cong, xong_doc_duoc
+        pointers: cam_on_thay_dd
+
+      da_xong_dd:
+        text: "Em qua được bài của tôi. Đừng tưởng vì thế mà tôi sẽ nhớ tên em."
+        conditions: "xong_doc_duoc"
+        pointers: cam_on_thay_dd
+
+      ket_thuc_dd:
+        text: "Ra ngoài."
+
+    player_options:
+      im_lang:
+        text: "&a(Im lặng lắng nghe)"
+        pointer: giao_cong_thuc_npc
+      tra_loi_cau_hoi:
+        text: "&aThầy có muốn hỏi em điều gì không ạ?"
+        pointer: cau_hoi_kho
+      dap_dung:
+        text: "&aThuốc ngủ cực mạnh, thưa thầy — Giọt Sống Chết."
+        pointer: dap_an_dung
+      dap_sai:
+        text: "&aEm không biết ạ."
+        pointer: dap_an_sai
+      nhan_cong_thuc:
+        text: "&a(Chờ nhận bài)"
+        pointer: giao_cong_thuc_npc
+      vang_thay:
+        text: "&aVâng thưa thầy."
+        pointer: ket_thuc_dd
+      cam_on_thay_dd:
+        text: "&aEm cảm ơn thầy ạ."
+        pointer: ket_thuc_dd
+
+  # ------------------------------------------------------------
+  #  MADAM ROLANDA HOOCH — LỚP BAY
+  # ------------------------------------------------------------
+  hooch:
+    quester: "&fMadam Hooch"
+    first: chao_lop_bay, da_xong_bay
+    stop: "true"
+
+    NPC_options:
+
+      chao_lop_bay:
+        text: "Đứng cạnh chổi của em. Đưa tay phải ra trên cán chổi và hô — Up!"
+        conditions: "!xong_lop_bay"
+        pointers: san_sang_bay
+
+      giao_choi:
+        text: "Đây là chổi của trường. Cũ, hơi lệch đuôi, nhưng đủ dùng. Đạp mạnh xuống đất, giữ chổi cân, rồi bay lên độ ba mươi mét. Đừng bay cao hơn."
+        events: vao_lop_bay, cho_choi, thong_bao_bay, obj_bay_len
+        pointers: vang_a_bay
+
+      da_xong_bay:
+        text: "Em bay tốt đấy. Bản năng tốt. Biết đâu vài năm nữa lại thấy em trong đội Quidditch của Nhà."
+        conditions: "xong_lop_bay"
+        events: xong_lop_bay
+        pointers: cam_on_co_bay
+
+      ket_thuc_bay:
+        text: "Hai chân xuống đất. Đi đi."
+
+    player_options:
+      san_sang_bay:
+        text: "&aEm sẵn sàng ạ."
+        pointer: giao_choi
+      vang_a_bay:
+        text: "&aVâng ạ."
+        pointer: ket_thuc_bay
+      cam_on_co_bay:
+        text: "&aEm cảm ơn cô ạ."
+        pointer: ket_thuc_bay
+
+  # ------------------------------------------------------------
+  #  GIÁO SƯ QUIRINUS QUIRRELL — DADA
+  # ------------------------------------------------------------
+  quirrell:
+    quester: "&dGiáo sư Quirrell"
+    first: chao_lop_dada, dang_luyen_dada, da_luyen_du, da_xong_dada
+    stop: "true"
+
+    NPC_options:
+
+      chao_lop_dada:
+        text: "À... à-à-à, học sinh mới. V-vào chỗ đi. Hôm nay ta d-dạy các con một bùa phòng vệ r-rất hữu ích."
+        conditions: "!dang_hoc_dada"
+        pointers: hoi_bua_gi, hoi_khan_xep
+
+      giai_thich_dada:
+        text: "P-Petrificus Totalus. Bùa Đông Cứng Toàn Thân. Nó khoá c-cứng tay chân đối thủ lại. R-rất tiện khi con không muốn làm ai bị thương."
+        pointers: san_sang_dada
+
+      tra_loi_khan:
+        text: "K-khăn này à? Một hoàng tử châu Phi t-tặng ta, sau khi ta giúp ông ta t-trừ một con thây ma... Thôi, không quan trọng. V-vào bài đi."
+        pointers: san_sang_dada
+
+      giao_bai_dada:
+        text: "K-kia là bù nhìn tập luyện. Niệm P-Petrificus Totalus vào nó b-ba lần rồi quay lại gặp ta."
+        events: vao_lop_dada, bat_dau_luyen_dada
+        pointers: vang_thay_dada
+
+      dang_luyen_dada:
+        text: "C-chưa đủ đâu. Cứ t-tiếp tục đi."
+        conditions: "dang_hoc_dada,!du_3_lan_dada,!xong_dada"
+        pointers: vang_thay_dada
+
+      da_luyen_du:
+        text: "Tốt... r-rất tốt. Con học nhanh hơn ta t-tưởng. Hai mươi điểm cho Nhà của con."
+        conditions: "dang_hoc_dada,du_3_lan_dada,!xong_dada"
+        events: xong_dada
+        pointers: cam_on_thay_dada
+
+      da_xong_dada:
+        text: "Con đã qua bài r-rồi. Đêm nay... đừng đi lang thang ngoài hành lang. Có những thứ trong lâu đài này k-không dành cho học sinh năm nhất."
+        conditions: "xong_dada"
+        pointers: cam_on_thay_dada
+
+      ket_thuc_dada:
+        text: "Đ-đi đi."
+
+    player_options:
+      hoi_bua_gi:
+        text: "&aHôm nay chúng em học bùa gì ạ?"
+        pointer: giai_thich_dada
+      hoi_khan_xep:
+        text: "&aThưa thầy, sao thầy luôn đội khăn xếp ạ?"
+        pointer: tra_loi_khan
+      san_sang_dada:
+        text: "&aEm sẵn sàng ạ."
+        pointer: giao_bai_dada
+      vang_thay_dada:
+        text: "&aVâng thưa thầy."
+        pointer: ket_thuc_dada
+      cam_on_thay_dada:
+        text: "&aEm cảm ơn thầy ạ."
+        pointer: ket_thuc_dada
+
+  # ------------------------------------------------------------
+  #  ARGUS FILCH — CẤM TÚC
+  # ------------------------------------------------------------
+  filch:
+    quester: "&8Argus Filch"
+    first: giao_cam_tuc, da_xong_cam_tuc_filch
+    stop: "true"
+
+    NPC_options:
+
+      giao_cam_tuc:
+        text: "Cấm túc. Nửa đêm. Rừng Cấm. Ngày xưa người ta còn treo học sinh lên trần nhà bằng cổ tay — ta vẫn giữ mấy cái xích trong phòng, phòng khi cần dùng lại."
+        conditions: "!xong_cam_tuc,xong_dada"
+        pointers: hoi_lam_gi
+
+      giai_thich_cam_tuc:
+        text: "Có thứ gì đó đang giết kỳ lân trong rừng. Hagrid cần người đi cùng. Cầm đèn lên và bám theo vệt máu bạc."
+        events: bat_dau_cam_tuc, obj_theo_vet_mau
+        pointers: vang_bac
+
+      da_xong_cam_tuc_filch:
+        text: "Vẫn còn sống à. Tiếc thật."
+        conditions: "xong_cam_tuc"
+        pointers: vang_bac
+
+      ket_thuc_filch:
+        text: "Cút khỏi hành lang của ta."
+
+    player_options:
+      hoi_lam_gi:
+        text: "&aEm phải làm gì ạ?"
+        pointer: giai_thich_cam_tuc
+      vang_bac:
+        text: "&aVâng ạ."
+        pointer: ket_thuc_filch

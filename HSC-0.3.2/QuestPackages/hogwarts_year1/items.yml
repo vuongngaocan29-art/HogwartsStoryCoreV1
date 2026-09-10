@@ -1,0 +1,23 @@
+# ============================================================
+#  NĂM I — VẬT PHẨM
+# ============================================================
+
+items:
+
+  que_diem: "stick name:&fQue_diêm lore:&7Giáo_sư_McGonagall_giao_cho_con.;&7Hãy_biến_nó_thành_một_cây_kim."
+  cay_kim: "stick name:&fCây_kim lore:&7Bạc,_sắc,_và_hoàn_hảo.;&8Bài_biến_hình_đầu_tiên."
+
+  cong_thuc_tri_nhot: "written_book title:Thuốc_Trị_Nhọt author:Arsenius_Jigger"
+
+  gai_nhim: "sea_pickle name:&2Gai_nhím_biển"
+  tam_ma: "fern name:&2Tầm_ma_khô"
+  thuoc_tri_nhot: "potion name:&aThuốc_Trị_Nhọt lore:&7Nấu_trong_tiết_học_đầu_tiên_của_Snape."
+
+  choi_truong: "wooden_shovel name:&6Chổi_bay_trường lore:&7Cũ_kỹ_và_hơi_lệch_đuôi.;&8Chỉ_dùng_trong_giờ_học."
+
+  dua_phep: "blaze_rod name:&d✦_Đũa_phép"
+
+  chia_khoa_bac: "tripwire_hook name:&f Chìa_khoá_bạc_cánh_gãy"
+
+  # Phần thưởng cuối năm
+  huy_chuong_nam_1: "gold_ingot name:&6Huy_chương_Năm_I lore:&7Trao_cho_học_sinh_hoàn_thành_năm_thứ_nhất."

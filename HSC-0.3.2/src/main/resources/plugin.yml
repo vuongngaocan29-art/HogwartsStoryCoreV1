@@ -1,0 +1,36 @@
+name: HogwartsStoryCore
+version: '${project.version}'
+main: com.donnnsleep.hogwarts.HogwartsStoryCore
+api-version: '1.21'
+author: DonnnSleep
+description: Lõi RPG học viện phù thuỷ - Nhà, năm học, đũa phép, thần chú, điểm Nhà.
+softdepend: [PlaceholderAPI, Citizens, MythicMobs, BetonQuest, Vault, PlayerPoints]
+
+commands:
+  hogwarts:
+    description: Hồ sơ học sinh và quản trị Hogwarts
+    usage: /hogwarts [profile|points|spells|sorting|wand|letter]
+    aliases: [hw, hogwart]
+  spell:
+    description: Chọn hoặc niệm thần chú
+    usage: /spell <tên phép>
+    aliases: [phep, cast]
+  trogiup:
+    description: Sổ tay hướng dẫn cho học sinh mới
+    usage: /trogiup
+    aliases: [huongdan, help2, sotay]
+  commonroom:
+    description: Phòng Sinh hoạt chung của Nhà
+    usage: /cr [password]
+    aliases: [cr, phong]
+
+permissions:
+  hogwarts.admin:
+    description: Toàn quyền quản trị Hogwarts
+    default: op
+  hogwarts.commonroom.bypass:
+    description: Vào được Phòng Sinh hoạt chung của mọi Nhà
+    default: op
+  hogwarts.spell.bypass:
+    description: Niệm mọi phép bất kể năm học hay đã học hay chưa
+    default: op

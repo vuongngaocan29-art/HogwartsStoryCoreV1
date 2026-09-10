@@ -1,0 +1,69 @@
+# ============================================================
+#  CỐT TRUYỆN PHỤ — ĐIỀU KIỆN
+#  Tất cả đều đọc tag "side_". Không cái nào ảnh hưởng mạch chính.
+# ============================================================
+
+conditions:
+
+  # ---------------- ĐIỀU KIỆN MỞ KHOÁ CHUNG ----------------
+  # Chỉ cần đã được Phân Loại là làm được quest phụ, bất kể đang Năm mấy.
+  da_la_hoc_sinh: "variable %ph.hogwarts_sorted% true"
+
+  # ---------------- TREVOR ----------------
+  dang_tim_coc: "tag side_trevor_started"
+  xong_coc: "tag side_trevor_done"
+  co_coc: "item con_coc:1"
+
+  # ---------------- PEEVES ----------------
+  gap_peeves_roi: "tag side_peeves_started"
+  xong_peeves: "tag side_peeves_done"
+  chon_nhanh_giup: "tag side_peeves_branch_help"
+  chon_nhanh_mach: "tag side_peeves_branch_report"
+  chua_chon_nhanh: "and !chon_nhanh_giup,!chon_nhanh_mach"
+  co_bom_thoi: "item bom_thoi:1"
+
+  # ---------------- KHU CẤM ----------------
+  dang_lam_khu_cam: "tag side_restricted_started"
+  xong_khu_cam: "tag side_restricted_done"
+  tung_bi_bat: "tag side_restricted_caught"
+  co_sach_cam: "item sach_khu_cam:1"
+  gio_gioi_nghiem: "time 21-5"
+  ban_ngay: "gio_gioi_nghiem negate"
+  # Xác suất bị Filch bắt khi lẻn vào ban đêm
+  filch_tuan_tra: "chance 35"
+
+  # ---------------- GƯƠNG ẢO ẢNH ----------------
+  thay_guong: "tag side_mirror_found"
+  xong_guong: "tag side_mirror_done"
+  chua_soi_guong: "xong_guong negate"
+
+  # ---------------- BẾP ----------------
+  biet_duong_vao_bep: "tag side_kitchen_found"
+  dang_giup_bep: "tag side_kitchen_started"
+  xong_bep: "tag side_kitchen_done"
+  duoc_vao_bep: "tag side_kitchen_access"
+  co_du_dau: "item SWEET_BERRIES:10"
+
+  # ---------------- NICK ----------------
+  gap_nick_roi: "tag side_nick_started"
+  xong_nick: "tag side_nick_done"
+  co_thu_tu_choi: "item thu_tu_choi:1"
+
+  # ---------------- THẺ SÔ CÔ LA ----------------
+  du_tien_mua: "money 5"
+  the_1: "tag side_card_dumbledore"
+  the_2: "tag side_card_merlin"
+  the_3: "tag side_card_morgana"
+  the_4: "tag side_card_circe"
+  the_5: "tag side_card_paracelsus"
+  the_6: "tag side_card_agrippa"
+  the_7: "tag side_card_ptolemy"
+  the_8: "tag side_card_hengist"
+  the_9: "tag side_card_alberic"
+  the_10: "tag side_card_cliodna"
+  the_11: "tag side_card_gunhilda"
+  the_12: "tag side_card_bowman"
+
+  du_bo_suu_tap: "and the_1,the_2,the_3,the_4,the_5,the_6,the_7,the_8,the_9,the_10,the_11,the_12"
+  chua_du_bo: "du_bo_suu_tap negate"
+  da_nhan_thuong_the: "tag side_cards_complete"

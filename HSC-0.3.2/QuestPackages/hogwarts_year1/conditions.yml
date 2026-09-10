@@ -1,0 +1,73 @@
+# ============================================================
+#  NĂM I — ĐIỀU KIỆN
+# ============================================================
+
+conditions:
+
+  # ---------------- TIẾN ĐỘ CHUNG ----------------
+  da_bat_dau: "tag year1_started"
+  chua_bat_dau: "tag year1_started negate"
+
+  da_gap_hagrid: "tag year1_met_hagrid"
+  co_dua_phep: "tag year1_has_wand"
+  chua_co_dua: "tag year1_has_wand negate"
+
+  da_phan_loai: "tag year1_sorted"
+  chua_phan_loai: "tag year1_sorted negate"
+
+  # ---------------- LỚP HỌC ----------------
+  xong_bua_chu: "tag year1_charms_done"
+  chua_xong_bua_chu: "tag year1_charms_done negate"
+  dang_hoc_bua_chu: "tag year1_charms_started"
+
+  xong_bien_hinh: "tag year1_transfig_done"
+  chua_xong_bien_hinh: "tag year1_transfig_done negate"
+  dang_hoc_bien_hinh: "tag year1_transfig_started"
+
+  xong_doc_duoc: "tag year1_potions_done"
+  chua_xong_doc_duoc: "tag year1_potions_done negate"
+  dang_hoc_doc_duoc: "tag year1_potions_started"
+
+  xong_lop_bay: "tag year1_flying_done"
+  chua_xong_lop_bay: "tag year1_flying_done negate"
+
+  xong_dada: "tag year1_dada_done"
+  chua_xong_dada: "tag year1_dada_done negate"
+  dang_hoc_dada: "tag year1_dada_started"
+
+  xong_cam_tuc: "tag year1_detention_done"
+  chua_xong_cam_tuc: "tag year1_detention_done negate"
+
+  # ---------------- LUYỆN PHÉP ----------------
+  du_5_lan_bua_chu: "point charms_practice 5"
+  du_3_lan_dada: "point dada_practice 3"
+  du_3_lan_lumos: "point lumos_practice 3"
+
+  # ---------------- VẬT PHẨM ----------------
+  co_que_diem: "item que_diem:1"
+  co_cay_kim: "item cay_kim:1"
+  co_du_nguyen_lieu: "item gai_nhim:3,tam_ma:2"
+  co_thuoc_tri_nhot: "item thuoc_tri_nhot:1"
+  co_choi: "item choi_truong:1"
+
+  # ---------------- THỬ THÁCH CUỐI NĂM ----------------
+  du_dieu_kien_thu_thach: "and xong_bua_chu,xong_bien_hinh,xong_doc_duoc,xong_lop_bay,xong_dada,xong_cam_tuc"
+  chua_du_dieu_kien: "du_dieu_kien_thu_thach negate"
+
+  qua_phong_1: "tag year1_room_fluffy"
+  qua_phong_2: "tag year1_room_devilsnare"
+  qua_phong_3: "tag year1_room_keys"
+  qua_phong_4: "tag year1_room_chess"
+  qua_phong_5: "tag year1_room_riddle"
+
+  xong_nam_1: "tag year1_completed"
+
+  # ---------------- NHÀ ----------------
+  la_gryffindor: "variable %ph.hogwarts_house% Gryffindor"
+  la_slytherin: "variable %ph.hogwarts_house% Slytherin"
+  la_ravenclaw: "variable %ph.hogwarts_house% Ravenclaw"
+  la_hufflepuff: "variable %ph.hogwarts_house% Hufflepuff"
+
+  # ---------------- KHÁC ----------------
+  ban_dem: "time 21-5"
+  la_nam_1: "variable %ph.hogwarts_year_number% 1"

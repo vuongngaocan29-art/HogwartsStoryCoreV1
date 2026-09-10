@@ -1,0 +1,179 @@
+# ============================================================
+#  NĂM I — SỰ KIỆN
+# ============================================================
+
+events:
+
+  # ---------------- TIỆN ÍCH ----------------
+  diem_gryffindor: "command hogwarts award gryffindor 10 hoàn thành nhiệm vụ"
+  diem_nha_10: "command hogwarts award %objective.house.house% 10 hoàn thành nhiệm vụ"
+
+  # Cộng điểm cho Nhà của chính người chơi (dùng placeholder của HogwartsStoryCore)
+  thuong_diem_10: "command hogwarts award %ph.hogwarts_house% 10 hoàn thành nhiệm vụ"
+  thuong_diem_20: "command hogwarts award %ph.hogwarts_house% 20 hoàn thành xuất sắc"
+  thuong_diem_50: "command hogwarts award %ph.hogwarts_house% 50 vượt qua thử thách cuối năm"
+  tru_diem_10: "command hogwarts award %ph.hogwarts_house% -10 vi phạm nội quy"
+
+  # ---------------- CHƯƠNG 1: HẺM XÉO ----------------
+  bat_dau_nam_1: "folder tag_bat_dau,nhat_ky_bat_dau,thong_bao_bat_dau"
+  tag_bat_dau: "tag add year1_started"
+  nhat_ky_bat_dau: "journal add year1_letter"
+  thong_bao_bat_dau: "notify &e✉ Thư nhập học đã tới. Hãy tìm Hagrid ở Hẻm Xéo. io:chat"
+
+  gap_hagrid: "folder tag_gap_hagrid,nhat_ky_hem_xeo"
+  tag_gap_hagrid: "tag add year1_met_hagrid"
+  nhat_ky_hem_xeo: "journal add year1_diagon"
+  obj_tim_ollivander: "objective add di_toi_ollivander"
+
+  # Ollivander trao đũa phép (gọi thẳng lệnh của HogwartsStoryCore)
+  trao_dua_phep: "command hogwarts wand"
+  hoan_thanh_dua: "folder tag_co_dua,nhat_ky_dua,obj_len_tau"
+  tag_co_dua: "tag add year1_has_wand"
+  nhat_ky_dua: "journal add year1_wand"
+  obj_len_tau: "objective add di_toi_dai_sanh"
+
+  # ---------------- CHƯƠNG 2: LỄ PHÂN LOẠI ----------------
+  bat_dau_phan_loai: "command hogwarts sorting"
+  hoan_thanh_phan_loai: "folder tag_da_phan_loai,nhat_ky_phan_loai,day_lumos,obj_lop_bua_chu"
+  tag_da_phan_loai: "tag add year1_sorted"
+  nhat_ky_phan_loai: "journal add year1_sorting"
+  day_lumos: "command hogwarts teach %player% lumos"
+  obj_lop_bua_chu: "objective add di_toi_lop_bua_chu"
+
+  # ---------------- CHƯƠNG 3: TIẾT BÙA CHÚ (FLITWICK) ----------------
+  vao_lop_bua_chu: "folder tag_o_lop_bua_chu,nhat_ky_bua_chu"
+  tag_o_lop_bua_chu: "tag add year1_charms_started"
+  nhat_ky_bua_chu: "journal add year1_charms"
+
+  day_wingardium: "command hogwarts teach %player% wingardium-leviosa"
+  bat_dau_luyen_bua: "folder day_wingardium,reset_diem_luyen,thong_bao_luyen"
+  reset_diem_luyen: "deletepoint charms_practice"
+  thong_bao_luyen: "notify &b➤ Hãy niệm Wingardium Leviosa 5 lần để thuần thục. io:chat"
+
+  # Được gọi từ cast-hooks trong config.yml của HogwartsStoryCore
+  charms_practice_tick: "point charms_practice 1"
+  lumos_practice_tick: "point lumos_practice 1"
+  dada_practice_tick: "point dada_practice 1"
+
+  xong_bua_chu: "folder tag_xong_bua_chu,thuong_diem_20,nhat_ky_xong_bua_chu,obj_lop_bien_hinh"
+  tag_xong_bua_chu: "tag add year1_charms_done"
+  nhat_ky_xong_bua_chu: "journal add year1_charms_done"
+  obj_lop_bien_hinh: "objective add di_toi_lop_bien_hinh"
+
+  # ---------------- CHƯƠNG 4: BIẾN HÌNH (MCGONAGALL) ----------------
+  vao_lop_bien_hinh: "tag add year1_transfig_started"
+  giao_bai_kim: "folder cho_que_diem,thong_bao_kim"
+  cho_que_diem: "give que_diem"
+  thong_bao_kim: "notify &6➤ Biến que diêm thành cây kim. Đặt nó lên bàn học. io:chat"
+  obj_dat_que_diem: "objective add dat_que_diem"
+
+  bien_thanh_kim: "folder lay_que_diem,cho_cay_kim,hieu_ung_bien_hinh"
+  lay_que_diem: "take que_diem"
+  cho_cay_kim: "give cay_kim"
+  hieu_ung_bien_hinh: "notify &6✦ Que diêm ánh lên bạc rồi thu nhỏ lại thành một cây kim. io:chat"
+
+  xong_bien_hinh: "folder tag_xong_bien_hinh,thuong_diem_20,nhat_ky_xong_bien_hinh,obj_lop_doc_duoc"
+  tag_xong_bien_hinh: "tag add year1_transfig_done"
+  nhat_ky_xong_bien_hinh: "journal add year1_transfig_done"
+  obj_lop_doc_duoc: "objective add di_toi_lop_doc_duoc"
+
+  # ---------------- CHƯƠNG 5: ĐỘC DƯỢC (SNAPE) ----------------
+  vao_lop_doc_duoc: "tag add year1_potions_started"
+  snape_tru_diem: "command hogwarts award %ph.hogwarts_house% -5 trả lời sai câu hỏi của Giáo sư Snape"
+  obj_hai_nguyen_lieu: "folder obj_gai_nhim,obj_tam_ma"
+  obj_gai_nhim: "objective add hai_gai_nhim"
+  obj_tam_ma: "objective add hai_tam_ma"
+  kiem_tra_nguyen_lieu: "notify &2Đã hái được một phần nguyên liệu. io:chat"
+  giao_cong_thuc: "folder cho_sach_cong_thuc,thong_bao_cong_thuc"
+  cho_sach_cong_thuc: "give cong_thuc_tri_nhot"
+  thong_bao_cong_thuc: "notify &2➤ Hái 3 gai nhím biển và 2 nắm tầm ma khô. io:chat"
+
+  nau_thanh_cong: "folder lay_nguyen_lieu,cho_lo_thuoc,thuong_diem_20"
+  lay_nguyen_lieu: "take gai_nhim:3,tam_ma:2"
+  cho_lo_thuoc: "give thuoc_tri_nhot"
+
+  xong_doc_duoc: "folder tag_xong_doc_duoc,nhat_ky_xong_doc_duoc,obj_lop_bay"
+  tag_xong_doc_duoc: "tag add year1_potions_done"
+  nhat_ky_xong_doc_duoc: "journal add year1_potions_done"
+  obj_lop_bay: "objective add di_toi_san_bay"
+
+  # ---------------- CHƯƠNG 6: LỚP BAY (MADAM HOOCH) ----------------
+  vao_lop_bay: "tag add year1_flying_started"
+  cho_choi: "give choi_truong"
+  thong_bao_bay: "notify &f➤ Đứng cạnh chổi và hô: Up! io:chat"
+  obj_bay_len: "objective add bay_len_cao"
+
+  xong_lop_bay: "folder tag_xong_lop_bay,thuong_diem_20,nhat_ky_xong_lop_bay,obj_gap_quirrell"
+  tag_xong_lop_bay: "tag add year1_flying_done"
+  nhat_ky_xong_lop_bay: "journal add year1_flying_done"
+  obj_gap_quirrell: "objective add di_toi_lop_dada"
+
+  # ---------------- CHƯƠNG 7: PHÒNG CHỐNG NGHỆ THUẬT HẮC ÁM ----------------
+  vao_lop_dada: "tag add year1_dada_started"
+  day_petrificus: "command hogwarts teach %player% petrificus-totalus"
+  day_locomotor: "command hogwarts teach %player% locomotor-mortis"
+  bat_dau_luyen_dada: "folder day_petrificus,day_locomotor,reset_diem_dada,thong_bao_dada"
+  reset_diem_dada: "deletepoint dada_practice"
+  thong_bao_dada: "notify &d➤ Niệm Petrificus Totalus 3 lần vào bù nhìn tập luyện. io:chat"
+
+  xong_dada: "folder tag_xong_dada,thuong_diem_20,nhat_ky_xong_dada,obj_cam_tuc"
+  tag_xong_dada: "tag add year1_dada_done"
+  nhat_ky_xong_dada: "journal add year1_dada_done"
+  obj_cam_tuc: "objective add di_toi_rung_cam"
+
+  # ---------------- CHƯƠNG 8: CẤM TÚC TRONG RỪNG CẤM ----------------
+  bat_dau_cam_tuc: "folder tag_cam_tuc,nhat_ky_rung_cam,thong_bao_rung"
+  tag_cam_tuc: "tag add year1_detention_started"
+  nhat_ky_rung_cam: "journal add year1_forest"
+  thong_bao_rung: "notify &8➤ Đi theo vệt máu bạc kỳ lân vào sâu trong Rừng Cấm. io:chat"
+  obj_theo_vet_mau: "objective add theo_vet_mau"
+  spawn_bong_den: "command mm mobs spawn HoodedFigure 1 %location%"
+
+  xong_cam_tuc: "folder tag_xong_cam_tuc,nhat_ky_xong_rung,obj_thu_thach_cuoi"
+  tag_xong_cam_tuc: "tag add year1_detention_done"
+  nhat_ky_xong_rung: "journal add year1_forest_done"
+  obj_thu_thach_cuoi: "objective add di_toi_cua_sap"
+
+  # ---------------- CHƯƠNG 9: THỬ THÁCH CUỐI NĂM ----------------
+  bat_dau_thu_thach: "folder tag_thu_thach,nhat_ky_thu_thach,thong_bao_thu_thach"
+  tag_thu_thach: "tag add year1_final_started"
+  nhat_ky_thu_thach: "journal add year1_final"
+  thong_bao_thu_thach: "notify &4Có kẻ đang tìm cách lấy thứ được cất dưới cửa sập. io:chat"
+
+  # Phòng 1 — Fluffy: ru ngủ bằng tiếng nhạc
+  qua_phong_1: "folder tag_phong_1,thong_bao_phong_1"
+  tag_phong_1: "tag add year1_room_fluffy"
+  thong_bao_phong_1: "notify &7Con chó ba đầu ngủ thiếp đi khi tiếng đàn vang lên. io:chat"
+
+  # Phòng 2 — Dây Tơ Hồng: dùng Incendio hoặc Lumos Maxima
+  day_incendio: "command hogwarts teach %player% incendio"
+  qua_phong_2: "folder tag_phong_2,thong_bao_phong_2"
+  tag_phong_2: "tag add year1_room_devilsnare"
+  thong_bao_phong_2: "notify &7Đám dây leo co rúm lại trước ánh sáng và hơi nóng. io:chat"
+
+  # Phòng 3 — Chìa khoá bay: bắt bằng chổi
+  qua_phong_3: "folder tag_phong_3,thong_bao_phong_3"
+  tag_phong_3: "tag add year1_room_keys"
+  thong_bao_phong_3: "notify &7Chiếc chìa khoá bạc cánh gãy nằm gọn trong tay bạn. io:chat"
+
+  # Phòng 4 — Cờ phù thuỷ
+  qua_phong_4: "folder tag_phong_4,thong_bao_phong_4"
+  tag_phong_4: "tag add year1_room_chess"
+  thong_bao_phong_4: "notify &7Quân vua đối phương buông kiếm xuống. io:chat"
+
+  # Phòng 5 — Câu đố lọ thuốc
+  qua_phong_5: "folder tag_phong_5,thong_bao_phong_5"
+  tag_phong_5: "tag add year1_room_riddle"
+  thong_bao_phong_5: "notify &7Ngọn lửa tím rẽ ra. Bạn bước qua. io:chat"
+
+  # Boss cuối năm
+  spawn_boss: "command mm mobs spawn Quirrell 1 %location%"
+  thang_boss: "folder tag_thang_boss,thuong_diem_50,nhat_ky_ket_thuc,len_nam_2"
+  tag_thang_boss: "tag add year1_completed"
+  nhat_ky_ket_thuc: "journal add year1_complete"
+  len_nam_2: "command hogwarts year %player% next"
+
+  # ---------------- KẾT NĂM I ----------------
+  ket_thuc_nam_1: "folder thong_bao_ket_thuc,day_phep_con_lai"
+  thong_bao_ket_thuc: "notify &6&lNĂM I HOÀN THÀNH — hẹn gặp lại vào tháng Chín. io:chat"
+  day_phep_con_lai: "command hogwarts teach %player% all-year"

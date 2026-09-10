@@ -1,0 +1,208 @@
+# ============================================================
+#  CỐT TRUYỆN PHỤ — SỰ KIỆN
+#  Thưởng điểm cố ý để nhỏ, không lấn át mạch chính.
+# ============================================================
+
+events:
+
+  # ---------------- TIỆN ÍCH ----------------
+  thuong_5: "command hogwarts award %ph.hogwarts_house% 5 việc tốt ngoài giờ học"
+  thuong_10: "command hogwarts award %ph.hogwarts_house% 10 hoàn thành việc riêng"
+  thuong_15: "command hogwarts award %ph.hogwarts_house% 15 làm được điều hiếm ai làm"
+  phat_10: "command hogwarts award %ph.hogwarts_house% -10 bị bắt gặp ngoài giờ giới nghiêm"
+  phat_20: "command hogwarts award %ph.hogwarts_house% -20 vi phạm nghiêm trọng nội quy"
+
+  # ============================================================
+  #  PHỤ 1 — CON CÓC TREVOR
+  #  Nhẹ nhàng, làm được ngay từ Năm I. Có thể lặp lại.
+  # ============================================================
+  nhan_tim_coc: "folder tag_tim_coc,nk_trevor,obj_tim_coc"
+  tag_tim_coc: "tag add side_trevor_started"
+  nk_trevor: "journal add side_trevor"
+  obj_tim_coc: "objective add tim_trevor"
+
+  bat_duoc_coc: "folder cho_coc,thong_bao_bat_coc"
+  cho_coc: "give con_coc"
+  thong_bao_bat_coc: "notify &a✦ Bạn tóm được Trevor. Nó không có vẻ gì là biết ơn. io:chat"
+
+  tra_coc: "folder lay_coc,tag_xong_coc,thuong_5,cho_keo,nk_trevor_xong"
+  lay_coc: "take con_coc"
+  tag_xong_coc: "tag add side_trevor_done"
+  cho_keo: "give keo_bertie"
+  nk_trevor_xong: "journal add side_trevor_done"
+
+  # Cho phép làm lại — Trevor lại trốn
+  reset_trevor: "folder xoa_tag_coc,thong_bao_coc_tron"
+  xoa_tag_coc: "tag delete side_trevor_done,side_trevor_started"
+  thong_bao_coc_tron: "notify &7Trevor lại biến mất. Tất nhiên rồi. io:chat"
+
+  # ============================================================
+  #  PHỤ 2 — PEEVES CON YÊU TINH PHÁ PHÁCH
+  #  Có NHÁNH: giúp Peeves hoặc mách Bà Béo. Hai kết cục khác nhau.
+  # ============================================================
+  gap_peeves: "folder tag_gap_peeves,nk_peeves"
+  tag_gap_peeves: "tag add side_peeves_started"
+  nk_peeves: "journal add side_peeves"
+
+  # --- Nhánh A: hùa theo Peeves ---
+  nhanh_giup_peeves: "folder tag_nhanh_a,obj_tha_boom,nk_peeves_a"
+  tag_nhanh_a: "tag add side_peeves_branch_help"
+  nk_peeves_a: "journal add side_peeves_help"
+  obj_tha_boom: "objective add tha_bom_thoi"
+
+  ket_nhanh_a: "folder tag_xong_peeves,thuong_10,phat_10,cho_bom,nk_peeves_a_xong"
+  cho_bom: "give bom_thoi"
+  nk_peeves_a_xong: "journal add side_peeves_help_done"
+
+  # --- Nhánh B: mách Bà Béo ---
+  nhanh_mach: "folder tag_nhanh_b,obj_bao_ba_beo,nk_peeves_b"
+  tag_nhanh_b: "tag add side_peeves_branch_report"
+  nk_peeves_b: "journal add side_peeves_report"
+  obj_bao_ba_beo: "objective add di_bao_ba_beo"
+
+  ket_nhanh_b: "folder tag_xong_peeves,thuong_15,cho_mat_khau,nk_peeves_b_xong"
+  cho_mat_khau: "give giay_mat_khau"
+  nk_peeves_b_xong: "journal add side_peeves_report_done"
+
+  tag_xong_peeves: "tag add side_peeves_done"
+
+  # ============================================================
+  #  PHỤ 3 — KHU CẤM CỦA THƯ VIỆN
+  #  Có rủi ro thật: đi ban ngày thì bị Bà Bình Bích đuổi,
+  #  đi ban đêm thì có thể bị Filch bắt và trừ điểm.
+  # ============================================================
+  nhan_viec_khu_cam: "folder tag_khu_cam,nk_khu_cam,obj_vao_khu_cam"
+  tag_khu_cam: "tag add side_restricted_started"
+  nk_khu_cam: "journal add side_restricted"
+  obj_vao_khu_cam: "objective add lay_sach_cam"
+
+  bi_bat_gap: "folder phat_20,thong_bao_bi_bat,tag_bi_bat,day_ve_phong"
+  tag_bi_bat: "tag add side_restricted_caught"
+  thong_bao_bi_bat: "notify &4Cuốn sách hét lên. Filch đang chạy tới. io:chat"
+  day_ve_phong: "notify &7Bạn bị lôi ra khỏi thư viện và cấm túc một tuần. io:chat"
+
+  lay_duoc_sach: "folder cho_sach_cam,thong_bao_lay_sach"
+  cho_sach_cam: "give sach_khu_cam"
+  thong_bao_lay_sach: "notify &5Bạn kịp bịt miệng cuốn sách trước khi nó hét. io:chat"
+
+  xong_khu_cam: "folder lay_lai_sach,tag_xong_khu_cam,thuong_10,nk_khu_cam_xong"
+  lay_lai_sach: "take sach_khu_cam"
+  tag_xong_khu_cam: "tag add side_restricted_done"
+  nk_khu_cam_xong: "journal add side_restricted_done"
+
+  # ============================================================
+  #  PHỤ 4 — GƯƠNG ẢO ẢNH
+  #  Chỉ làm được MỘT LẦN. Người chơi chọn điều mình khao khát,
+  #  nhận một buff nhỏ tương ứng. Không có lựa chọn nào "đúng".
+  # ============================================================
+  tim_thay_guong: "folder tag_guong,nk_guong"
+  tag_guong: "tag add side_mirror_found"
+  nk_guong: "journal add side_mirror"
+
+  chon_gia_dinh: "folder tag_chon_gd,buff_gia_dinh,nk_guong_xong"
+  tag_chon_gd: "tag add side_mirror_family"
+  buff_gia_dinh: "effect REGENERATION 600 1 ambient icon"
+
+  chon_vinh_quang: "folder tag_chon_vq,buff_vinh_quang,nk_guong_xong"
+  tag_chon_vq: "tag add side_mirror_glory"
+  buff_vinh_quang: "effect STRENGTH 600 0 ambient icon"
+
+  chon_tri_thuc: "folder tag_chon_tt,buff_tri_thuc,nk_guong_xong"
+  tag_chon_tt: "tag add side_mirror_knowledge"
+  buff_tri_thuc: "effect NIGHT_VISION 1200 0 ambient icon"
+
+  chon_binh_yen: "folder tag_chon_by,buff_binh_yen,nk_guong_xong"
+  tag_chon_by: "tag add side_mirror_peace"
+  buff_binh_yen: "effect RESISTANCE 600 0 ambient icon"
+
+  nk_guong_xong: "folder tag_xong_guong,journal_guong_xong,thuong_5"
+  tag_xong_guong: "tag add side_mirror_done"
+  journal_guong_xong: "journal add side_mirror_done"
+
+  guong_bien_mat: "notify &8Sáng hôm sau, căn phòng trống không. Tấm gương đã được chuyển đi. io:chat"
+
+  # ============================================================
+  #  PHỤ 5 — GIA TINH DƯỚI BẾP
+  # ============================================================
+  vao_bep: "folder tag_bep,nk_bep"
+  tag_bep: "tag add side_kitchen_found"
+  nk_bep: "journal add side_kitchen"
+
+  nhan_viec_bep: "folder tag_viec_bep,obj_hai_dau,thong_bao_viec_bep"
+  tag_viec_bep: "tag add side_kitchen_started"
+  obj_hai_dau: "objective add hai_dau_tay"
+  thong_bao_viec_bep: "notify &e➤ Hái 10 quả dâu trong nhà kính cho bữa tiệc. io:chat"
+  thong_bao_du_dau: "notify &a✦ Đủ dâu rồi. Mang xuống bếp cho gia tinh Bấc. io:chat"
+
+  xong_viec_bep: "folder lay_dau,tag_xong_bep,thuong_10,cho_banh,nk_bep_xong"
+  lay_dau: "take SWEET_BERRIES:10"
+  tag_xong_bep: "tag add side_kitchen_done"
+  cho_banh: "give banh_gia_tinh"
+  nk_bep_xong: "journal add side_kitchen_done"
+
+  # Mở khoá lâu dài: sau khi giúp, gia tinh luôn cho đồ ăn
+  mo_khoa_bep: "tag add side_kitchen_access"
+  xin_do_an: "give banh_gia_tinh"
+
+  # ============================================================
+  #  PHỤ 6 — NICK SUÝT MẤT ĐẦU
+  # ============================================================
+  gap_nick: "folder tag_nick,nk_nick"
+  tag_nick: "tag add side_nick_started"
+  nk_nick: "journal add side_nick"
+
+  nhan_viec_nick: "folder obj_tim_thu,thong_bao_viec_nick"
+  obj_tim_thu: "objective add tim_thu_tu_choi"
+  thong_bao_viec_nick: "notify &f➤ Tìm lá thư từ chối của Hội Săn Không Đầu trong tháp cũ. io:chat"
+
+  tim_duoc_thu: "folder cho_thu_tu_choi,thong_bao_tim_thu"
+  cho_thu_tu_choi: "give thu_tu_choi"
+  thong_bao_tim_thu: "notify &7Lá thư nằm dưới lớp bụi dày nửa thế kỷ. io:chat"
+
+  xong_viec_nick: "folder lay_thu,tag_xong_nick,thuong_15,nk_nick_xong"
+  lay_thu: "take thu_tu_choi"
+  tag_xong_nick: "tag add side_nick_done"
+  nk_nick_xong: "journal add side_nick_done"
+
+  # ============================================================
+  #  PHỤ 7 — THẺ SÔ CÔ LA ẾCH NHÁI (sưu tầm dài hạn, chạy suốt 7 năm)
+  # ============================================================
+  mua_ech: "folder tru_tien,mo_goi_ech"
+  tru_tien: "money -5"
+
+  # Gacha: mỗi gói ra một thẻ ngẫu nhiên
+  mo_goi_ech: "random 10%the_dumbledore,10%the_merlin,10%the_morgana,10%the_circe,10%the_paracelsus,10%the_agrippa,10%the_ptolemy,10%the_hengist,10%the_alberic,10%the_cliodna,5%the_gunhilda,5%the_bowman"
+
+  the_dumbledore: "folder tag_the_1,bao_the"
+  the_merlin: "folder tag_the_2,bao_the"
+  the_morgana: "folder tag_the_3,bao_the"
+  the_circe: "folder tag_the_4,bao_the"
+  the_paracelsus: "folder tag_the_5,bao_the"
+  the_agrippa: "folder tag_the_6,bao_the"
+  the_ptolemy: "folder tag_the_7,bao_the"
+  the_hengist: "folder tag_the_8,bao_the"
+  the_alberic: "folder tag_the_9,bao_the"
+  the_cliodna: "folder tag_the_10,bao_the"
+  the_gunhilda: "folder tag_the_11,bao_the"
+  the_bowman: "folder tag_the_12,bao_the"
+
+  tag_the_1: "tag add side_card_dumbledore"
+  tag_the_2: "tag add side_card_merlin"
+  tag_the_3: "tag add side_card_morgana"
+  tag_the_4: "tag add side_card_circe"
+  tag_the_5: "tag add side_card_paracelsus"
+  tag_the_6: "tag add side_card_agrippa"
+  tag_the_7: "tag add side_card_ptolemy"
+  tag_the_8: "tag add side_card_hengist"
+  tag_the_9: "tag add side_card_alberic"
+  tag_the_10: "tag add side_card_cliodna"
+  tag_the_11: "tag add side_card_gunhilda"
+  tag_the_12: "tag add side_card_bowman"
+
+  bao_the: "notify &6✦ Bạn nhận được một tấm thẻ mới! Gõ /j để xem bộ sưu tập. io:chat"
+  nk_the: "journal add side_cards"
+
+  du_bo_the: "folder tag_du_the,thuong_15,cho_hop_the,nk_the_xong"
+  tag_du_the: "tag add side_cards_complete"
+  cho_hop_the: "give hop_the_day_du"
+  nk_the_xong: "journal add side_cards_done"

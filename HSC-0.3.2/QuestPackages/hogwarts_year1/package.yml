@@ -1,0 +1,39 @@
+# ============================================================
+#  HOGWARTS — NĂM I
+#  Package BetonQuest 2.x
+#  Đặt cả thư mục này vào: plugins/BetonQuest/QuestPackages/
+# ============================================================
+
+package:
+  enabled: true
+
+# ------------------------------------------------------------
+#  GÁN NPC CITIZENS
+#  Đổi số ID cho khớp NPC trên server của bạn (/npc list).
+#  Cú pháp: "<id NPC Citizens>": <tên hội thoại>
+# ------------------------------------------------------------
+npcs:
+  "1": hagrid
+  "2": ollivander
+  "3": mcgonagall
+  "4": flitwick
+  "5": snape
+  "6": hooch
+  "7": quirrell
+  "8": filch
+
+# ------------------------------------------------------------
+#  BIẾN DÙNG CHUNG — sửa toạ độ cho khớp bản đồ của bạn
+# ------------------------------------------------------------
+variables:
+  world: "world"
+  loc_diagon: "100;64;100;world"
+  loc_ollivander: "108;64;96;world"
+  loc_great_hall: "0;70;0;world"
+  loc_charms: "40;70;20;world"
+  loc_transfig: "60;70;20;world"
+  loc_potions: "20;60;-40;world"
+  loc_dada: "80;72;10;world"
+  loc_flying: "0;65;80;world"
+  loc_forest: "-120;64;140;world"
+  loc_trapdoor: "10;66;-10;world"

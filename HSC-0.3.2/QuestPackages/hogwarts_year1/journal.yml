@@ -1,0 +1,90 @@
+# ============================================================
+#  NĂM I — NHẬT KÝ
+# ============================================================
+
+journal:
+
+  year1_letter: |-
+    &6&lThư nhập học
+    &0Một con cú thả lá thư xuống trước mặt mình. Trường Pháp thuật Hogwarts. Mình không nghĩ chuyện này là thật.
+    &0Trong thư có danh mục đồ dùng. Phải tới Hẻm Xéo.
+
+  year1_diagon: |-
+    &6&lHẻm Xéo
+    &0Hagrid dẫn mình qua bức tường gạch sau quán Cái Vạc Lủng. Cả một con phố phù thuỷ hiện ra.
+    &0Việc đầu tiên: mua đũa phép ở tiệm Ollivander.
+
+  year1_wand: |-
+    &6&lĐũa phép
+    &0Ông Ollivander thử vài cây rồi dừng lại ở một cây.
+    &0Ông ấy nói không phải phù thuỷ chọn đũa phép — mà đũa phép chọn phù thuỷ.
+
+  year1_sorting: |-
+    &6&lLễ Phân Loại
+    &0Chiếc Nón Phân Loại được đặt lên đầu mình. Nó nói chuyện, ngay trong đầu mình.
+    &0Rồi nó hét lên một cái tên, và cả Đại Sảnh Đường vỗ tay.
+
+  year1_charms: |-
+    &6&lTiết Bùa chú
+    &0Giáo sư Flitwick đứng trên chồng sách để nhìn qua bục giảng.
+    &0Bài đầu tiên: Wingardium Leviosa. Vung nhẹ và gạt — đừng nhấn mạnh chữ "gar" quá.
+
+  year1_charms_done: |-
+    &6&lTiết Bùa chú — hoàn thành
+    &0Cái lông vũ bay lên. Flitwick vỗ tay đến mức suýt ngã khỏi chồng sách.
+
+  year1_transfig: |-
+    &6&lTiết Biến hình
+    &0Giáo sư McGonagall biến bàn làm việc thành một con lợn rồi biến ngược lại, chỉ trong một cái vung tay.
+    &0Bài của mình khiêm tốn hơn: biến que diêm thành cây kim.
+
+  year1_transfig_done: |-
+    &6&lTiết Biến hình — hoàn thành
+    &0Que diêm ánh bạc rồi nhọn lại. McGonagall gật đầu — với bà ấy thì đó gần như là lời khen.
+
+  year1_potions: |-
+    &6&lTiết Độc dược
+    &0Hầm ngục lạnh hơn cả sân trường. Giáo sư Snape không hề nói to, nhưng cả lớp im phăng phắc.
+    &0Nồi đầu tiên: Thuốc Trị Nhọt.
+
+  year1_potions_done: |-
+    &6&lTiết Độc dược — hoàn thành
+    &0Thuốc chuyển sang màu xanh đúng như sách. Snape đi qua, không nói gì. Chắc như vậy là đạt.
+
+  year1_flying: |-
+    &6&lLớp Bay
+    &0Madam Hooch bảo cả lớp đưa tay lên trên cán chổi và hô "Up!".
+    &0Chổi của mình nảy thẳng vào lòng bàn tay ngay lần đầu.
+
+  year1_flying_done: |-
+    &6&lLớp Bay — hoàn thành
+    &0Hoá ra mình bay được. Thật sự bay được.
+
+  year1_dada: |-
+    &6&lPhòng chống Nghệ thuật Hắc ám
+    &0Lớp học của Giáo sư Quirrell nồng mùi tỏi. Ông ấy nói lắp và luôn quấn khăn xếp.
+    &0Hôm nay học Petrificus Totalus.
+
+  year1_dada_done: |-
+    &6&lPhòng chống Nghệ thuật Hắc ám — hoàn thành
+    &0Bù nhìn tập luyện cứng đờ và đổ nghiêng xuống sàn. Quirrell chỉ gật đầu, rất nhanh.
+
+  year1_forest: |-
+    &6&lCấm túc — Rừng Cấm
+    &0Filch dẫn mình ra bìa rừng lúc nửa đêm. Hagrid nói có thứ gì đó đang giết kỳ lân.
+    &0Có một vệt máu bạc chảy dài giữa đám rễ cây.
+
+  year1_forest_done: |-
+    &6&lCấm túc — kết thúc
+    &0Có một bóng đen trùm áo choàng cúi xuống con kỳ lân. Nó ngẩng lên nhìn mình.
+    &0Mình vẫn chưa ngủ được kể từ đêm đó.
+
+  year1_final: |-
+    &6&lDưới cửa sập
+    &0Có thứ gì đó được cất giấu dưới hành lang tầng ba. Và có kẻ đang tìm cách lấy nó.
+    &0Không còn thời gian đi báo giáo sư nữa.
+
+  year1_complete: |-
+    &6&lNăm thứ nhất — kết thúc
+    &0Mình sống sót. Nhà mình được cộng điểm ở bữa tiệc cuối năm.
+    &0Tháng Chín năm sau, mình sẽ quay lại.

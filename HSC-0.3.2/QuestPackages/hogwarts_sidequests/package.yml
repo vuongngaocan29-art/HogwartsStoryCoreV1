@@ -1,0 +1,32 @@
+# ============================================================
+#  HOGWARTS — CỐT TRUYỆN PHỤ
+#  Package BetonQuest 2.x
+#
+#  NGUYÊN TẮC THIẾT KẾ
+#  ├─ Mọi tag ở đây đều bắt đầu bằng "side_"
+#  ├─ Package hogwarts_year1 KHÔNG có điều kiện nào đọc tag "side_"
+#  ├─ Không quest phụ nào dạy phép mới hay đẩy năm học
+#  └─ Thưởng tối đa 15 điểm Nhà — thua xa 20-50 điểm của mạch chính
+#
+#  Nghĩa là: bỏ qua toàn bộ package này vẫn phá đảo được 7 năm.
+# ============================================================
+
+package:
+  enabled: true
+
+npcs:
+  "20": neville
+  "21": peeves
+  "22": ba_binh_bich
+  "23": dumbledore_guong
+  "24": gia_tinh_bac
+  "25": nick_suyt_mat_dau
+  "26": ba_ban_hang
+
+variables:
+  world: "world"
+  loc_guong: "-30;68;-60;world"
+  loc_khu_cam: "55;71;35;world"
+  loc_bep: "-15;58;25;world"
+  loc_ho: "-80;62;90;world"
+  loc_thap_cu: "70;80;-20;world"

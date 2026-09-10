@@ -1,0 +1,87 @@
+# ============================================================
+#  PHÒNG SINH HOẠT CHUNG
+#
+#  Đừng sửa toạ độ bằng tay — dùng lệnh trong game cho nhanh:
+#    /cr setentrance <nhà>   (nhìn vào khối làm cửa rồi gõ)
+#    /cr setspawn <nhà>      (đứng ở chỗ muốn dịch chuyển tới)
+#    /cr pos1  →  /cr pos2 <nhà>   (chọn hai góc của phòng)
+#    /cr status              (xem phòng nào đã xong)
+# ============================================================
+
+# Số ngày trước khi mật khẩu tự đổi (Gryffindor & Slytherin)
+password-rotate-days: 7
+
+# Kho mật khẩu. Khi tới hạn, hệ thống bốc ngẫu nhiên một cái khác cái cũ.
+password-words:
+  - "Caput Draconis"
+  - "Fortuna Major"
+  - "Balderdash"
+  - "Pig Snout"
+  - "Wattlebird"
+  - "Scurvy Cur"
+  - "Oddsbodikins"
+  - "Dilligrout"
+  - "Flibbertigibbet"
+  - "Mimbulus Mimbletonia"
+  - "Abstinence"
+  - "Quid Agis"
+  - "Fairy Lights"
+  - "Tapeworm"
+  - "Baubles"
+
+rooms:
+
+  # ------------------------------------------------------------
+  #  GRYFFINDOR — chân dung Bà Béo, tầng bảy
+  # ------------------------------------------------------------
+  GRYFFINDOR:
+    entry-type: PASSWORD
+    radius: 3.0
+
+  # ------------------------------------------------------------
+  #  SLYTHERIN — bức tường đá trần trụi trong hầm ngục
+  # ------------------------------------------------------------
+  SLYTHERIN:
+    entry-type: PASSWORD_WALL
+    radius: 3.0
+
+  # ------------------------------------------------------------
+  #  HUFFLEPUFF — dãy thùng gỗ cạnh nhà bếp
+  #  Gõ 7 nhịp theo vần "Hel-ga Huf-fle-puff".
+  #  Gõ quá số nhịp thì bị vòi giấm phun vào mặt.
+  # ------------------------------------------------------------
+  HUFFLEPUFF:
+    entry-type: KNOCK
+    knock-count: 7
+    radius: 3.0
+
+  # ------------------------------------------------------------
+  #  RAVENCLAW — con đại bàng đồng hỏi câu đố
+  #  Không có mật khẩu. Ai trả lời đúng cũng vào được, kể cả
+  #  học sinh Nhà khác — đúng như trong nguyên tác.
+  #  Hệ thống so khớp bằng cách CHỨA chuỗi, nên hãy để đáp án ngắn.
+  # ------------------------------------------------------------
+  RAVENCLAW:
+    entry-type: RIDDLE
+    radius: 3.0
+    riddles:
+      - question: "Thứ gì càng lấy đi thì càng lớn ra?"
+        answers: ["cái hố", "hố", "lỗ"]
+      - question: "Cái gì có cổ mà không có đầu?"
+        answers: ["cái chai", "chai", "áo"]
+      - question: "Thứ gì luôn ở phía trước con nhưng con không bao giờ nhìn thấy?"
+        answers: ["tương lai", "ngày mai"]
+      - question: "Cái gì càng chia thì càng nhiều?"
+        answers: ["hạnh phúc", "niềm vui", "kiến thức", "tri thức"]
+      - question: "Thứ gì thuộc về con nhưng người khác dùng nhiều hơn con?"
+        answers: ["tên", "cái tên", "tên của tôi"]
+      - question: "Con chạy mãi mà không bao giờ tới nơi, có miệng mà không nói. Con là gì?"
+        answers: ["dòng sông", "sông", "con sông"]
+      - question: "Cái gì vỡ ra ngay khi con nói tên nó?"
+        answers: ["sự im lặng", "im lặng", "yên lặng"]
+      - question: "Buổi sáng bốn chân, buổi trưa hai chân, buổi tối ba chân. Là ai?"
+        answers: ["con người", "người", "đời người"]
+      - question: "Thứ gì nhẹ như lông hồng mà không ai giữ được quá một phút?"
+        answers: ["hơi thở", "nhịp thở"]
+      - question: "Nơi nào hôm qua luôn đến sau hôm nay?"
+        answers: ["từ điển", "cuốn từ điển", "quyển từ điển"]

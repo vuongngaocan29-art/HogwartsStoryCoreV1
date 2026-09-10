@@ -1,0 +1,61 @@
+# ============================================================
+#  HOGWARTS STORY CORE — CẤU HÌNH
+# ============================================================
+
+magic:
+  # Hồi ma lực: mỗi <mana-regen-ticks> tick hồi <mana-regen-amount> điểm
+  mana-regen-ticks: 40
+  mana-regen-amount: 3.0
+  show-mana-actionbar: true
+
+  # XP nhận được
+  xp-per-cast: 2
+  xp-per-spell-learned: 25
+
+  # Cho phép phép thuật phá khối (Reducto, Confringo...)
+  # Để false nếu không muốn người chơi đục lâu đài.
+  spell-block-damage: false
+
+  # Lời nguyền Không thể Tha thứ (Imperio, Crucio, Avada Kedavra)
+  # Chỉ bật khi bạn chạy tuyến cốt truyện đặc biệt.
+  allow-unforgivable: false
+
+story:
+  # Tự gửi thư nhập học cho người chơi mới
+  auto-letter-on-first-join: true
+  # Số giây chờ trước khi con cú bay tới
+  letter-delay-seconds: 5
+
+houses:
+  # Điểm thưởng khi hoàn thành nhiệm vụ cốt truyện
+  points-per-quest: 20
+  # Điểm thưởng khi học được phép mới
+  points-per-spell: 5
+
+storage:
+  autosave-minutes: 5
+
+# ============================================================
+#  CẦU NỐI SANG BETONQUEST
+#  Mỗi lần niệm phép thành công, chạy các lệnh console dưới đây.
+#  Biến: %player%  %spell%  %incantation%
+#
+#  "any" chạy cho MỌI phép. Còn lại đặt theo id phép trong spells.yml.
+#  Nếu sự kiện BetonQuest chưa tồn tại, console sẽ báo lỗi — hãy xoá dòng đó.
+# ============================================================
+#
+#  QUAN TRỌNG: mặc định TẮT hết. Nếu bật mà chưa cài package BetonQuest
+#  hogwarts_year1 thì console sẽ báo lỗi "event not found" mỗi lần niệm phép.
+#  Cài package xong rồi hãy bỏ dấu # ở ba mục dưới đây.
+# ============================================================
+cast-hooks:
+  any: []
+
+  # wingardium-leviosa:
+  #   - "q event %player% hogwarts_year1.charms_practice_tick"
+
+  # lumos:
+  #   - "q event %player% hogwarts_year1.lumos_practice_tick"
+
+  # petrificus-totalus:
+  #   - "q event %player% hogwarts_year1.dada_practice_tick"
