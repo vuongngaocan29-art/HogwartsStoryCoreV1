@@ -1,0 +1,43 @@
+name: Tạo file plugin
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: HogwartsStoryCore-0.3
+
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: HogwartsStoryCore-0.3/pom.xml
+
+      - name: Build plugin
+        run: mvn -B clean package
+
+      - name: Gói bản phát hành
+        run: |
+          mkdir -p ban-phat-hanh
+          cp target/HogwartsStoryCore-*.jar ban-phat-hanh/
+          cp -r QuestPackages ban-phat-hanh/
+          cp CAI-DAT.md README.md ban-phat-hanh/
+
+      - name: Tải file lên
+        uses: actions/upload-artifact@v4
+        with:
+          name: HogwartsStoryCore-day-du
+          path: HogwartsStoryCore-0.3/ban-phat-hanh/
+          if-no-files-found: error
