@@ -1,4 +1,4 @@
-name: Tạo file plugin
+name: Build HogwartsStoryCore
 
 on:
   push:
@@ -8,10 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: HogwartsStoryCore-0.3
 
     steps:
       - name: Lấy mã nguồn
@@ -23,21 +19,41 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
-          cache-dependency-path: HogwartsStoryCore-0.3/pom.xml
+
+      - name: Kiểm tra project
+        run: |
+          echo "Thu muc hien tai:"
+          pwd
+          echo "Danh sach file:"
+          ls -la
+          test -f pom.xml || (echo "LOI: Khong tim thay pom.xml o thu muc goc repository" && exit 1)
 
       - name: Build plugin
         run: mvn -B clean package
 
-      - name: Gói bản phát hành
+      - name: Kiểm tra file JAR
+        run: |
+          echo "File trong target:"
+          ls -lah target/
+          test -f target/HogwartsStoryCore-0.3.2.jar || (echo "LOI: Khong tim thay HogwartsStoryCore-0.3.2.jar" && exit 1)
+
+      - name: Tải riêng file plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: HogwartsStoryCore-0.3.2
+          path: target/HogwartsStoryCore-0.3.2.jar
+          if-no-files-found: error
+
+      - name: Gói bản phát hành đầy đủ
         run: |
           mkdir -p ban-phat-hanh
-          cp target/HogwartsStoryCore-*.jar ban-phat-hanh/
+          cp target/HogwartsStoryCore-0.3.2.jar ban-phat-hanh/
           cp -r QuestPackages ban-phat-hanh/
           cp CAI-DAT.md README.md ban-phat-hanh/
 
-      - name: Tải file lên
+      - name: Tải bộ đầy đủ
         uses: actions/upload-artifact@v4
         with:
-          name: HogwartsStoryCore-day-du
-          path: HogwartsStoryCore-0.3/ban-phat-hanh/
+          name: HogwartsStoryCore-0.3.2-day-du
+          path: ban-phat-hanh/
           if-no-files-found: error
